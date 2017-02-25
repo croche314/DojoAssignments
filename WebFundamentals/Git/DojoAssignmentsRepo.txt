@@ -1,0 +1,430 @@
+Last login: Fri Feb 24 14:25:44 on ttys000
+Chriss-MacBook-Pro:~ croche314$ cd CodingDojo
+Chriss-MacBook-Pro:CodingDojo croche314$ cd test
+Chriss-MacBook-Pro:test croche314$ ls
+aboutMe.txt	index.html	styles.css
+Chriss-MacBook-Pro:test croche314$ git status
+On branch master
+nothing to commit, working directory clean
+Chriss-MacBook-Pro:test croche314$ git remote add origin https://github.com/croche314/test.git
+Chriss-MacBook-Pro:test croche314$ git push -u origin master
+Username for 'https://github.com': croche314
+Password for 'https://croche314@github.com': 
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/croche314/test.git/'
+Chriss-MacBook-Pro:test croche314$ git push -u origin master
+Username for 'https://github.com': croche314
+Password for 'https://croche314@github.com': 
+Counting objects: 12, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (10/10), done.
+Writing objects: 100% (12/12), 1.34 KiB | 0 bytes/s, done.
+Total 12 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), done.
+To https://github.com/croche314/test.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+Chriss-MacBook-Pro:test croche314$ cd ..
+Chriss-MacBook-Pro:CodingDojo croche314$ git status
+fatal: Not a git repository (or any of the parent directories): .git
+Chriss-MacBook-Pro:CodingDojo croche314$ git init
+Initialized empty Git repository in /Users/croche314/CodingDojo/.git/
+Chriss-MacBook-Pro:CodingDojo croche314$ git add .
+Chriss-MacBook-Pro:CodingDojo croche314$ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   .DS_Store
+	new file:   MEAN/.DS_Store
+	new file:   MEAN/about.txt
+	new file:   Python/.DS_Store
+	new file:   Python/about.txt
+	new file:   Ruby/.DS_Store
+	new file:   Ruby/about.txt
+	new file:   WebFundamentals/.DS_Store
+	new file:   WebFundamentals/BeltExam.zip
+	new file:   WebFundamentals/BeltExam/.DS_Store
+	new file:   WebFundamentals/BeltExam/images/.DS_Store
+	new file:   WebFundamentals/BeltExam/images/building.png
+	new file:   WebFundamentals/BeltExam/images/icon.png
+	new file:   WebFundamentals/BeltExam/images/main_img.png
+	new file:   WebFundamentals/BeltExam/index.html
+	new file:   WebFundamentals/BeltExam/style.css
+	new file:   WebFundamentals/CSS/.DS_Store
+	new file:   WebFundamentals/CSS/DisplayingBlocks.zip
+	new file:   WebFundamentals/CSS/DisplayingBlocks/.DS_Store
+	new file:   WebFundamentals/CSS/DisplayingBlocks/images/.DS_Store
+	new file:   WebFundamentals/CSS/DisplayingBlocks/images/adventure-cat.png
+	new file:   WebFundamentals/CSS/DisplayingBlocks/images/aidorucat.png
+	new file:   WebFundamentals/CSS/DisplayingBlocks/images/catandninja.png
+	new file:   WebFundamentals/CSS/DisplayingBlocks/images/chellocat.jpg
+	new file:   WebFundamentals/CSS/DisplayingBlocks/images/cherry.jpg
+	new file:   WebFundamentals/CSS/DisplayingBlocks/images/coder2.jpg
+	new file:   WebFundamentals/CSS/DisplayingBlocks/images/codercat.jpg
+	new file:   WebFundamentals/CSS/DisplayingBlocks/images/cooler.png
+	new file:   WebFundamentals/CSS/DisplayingBlocks/images/daftpunk.gif
+	new file:   WebFundamentals/CSS/DisplayingBlocks/images/defunktocat.png
+	new file:   WebFundamentals/CSS/DisplayingBlocks/images/dojocat.jpg
+	new file:   WebFundamentals/CSS/DisplayingBlocks/images/domo-cat.png
+	new file:   WebFundamentals/CSS/DisplayingBlocks/images/github.jpg
+	new file:   WebFundamentals/CSS/DisplayingBlocks/images/heisencat.png
+	new file:   WebFundamentals/CSS/DisplayingBlocks/images/ironcat.png
+	new file:   WebFundamentals/CSS/DisplayingBlocks/images/jean-luc-picat.jpg
+	new file:   WebFundamentals/CSS/DisplayingBlocks/images/kantana.jpg
+	new file:   WebFundamentals/CSS/DisplayingBlocks/images/linkcat.png
+	new file:   WebFundamentals/CSS/DisplayingBlocks/images/mario.png
+	new file:   WebFundamentals/CSS/DisplayingBlocks/images/octobiwan.jpg
+	new file:   WebFundamentals/CSS/DisplayingBlocks/images/oktobercat.png
+	new file:   WebFundamentals/CSS/DisplayingBlocks/images/riddlocat.png
+	new file:   WebFundamentals/CSS/DisplayingBlocks/images/stormtroopocat.png
+	new file:   WebFundamentals/CSS/DisplayingBlocks/images/visionary.jpg
+	new file:   WebFundamentals/CSS/DisplayingBlocks/index.html
+	new file:   WebFundamentals/CSS/DisplayingBlocks/style.css
+	new file:   WebFundamentals/CSS/GithubBlocks/.DS_Store
+	new file:   WebFundamentals/CSS/GithubBlocks/github-icon.png
+	new file:   WebFundamentals/CSS/GithubBlocks/index.html
+	new file:   WebFundamentals/CSS/GithubBlocks/style.css
+	new file:   WebFundamentals/CSS/Internet.zip
+	new file:   WebFundamentals/CSS/Internet/.DS_Store
+	new file:   WebFundamentals/CSS/Internet/images/.DS_Store
+	new file:   WebFundamentals/CSS/Internet/images/ad_background.png
+	new file:   WebFundamentals/CSS/Internet/images/client_server.jpg
+	new file:   WebFundamentals/CSS/Internet/images/globe.png
+	new file:   WebFundamentals/CSS/Internet/images/home.png
+	new file:   WebFundamentals/CSS/Internet/images/html.png
+	new file:   WebFundamentals/CSS/Internet/images/ninja.png
+	new file:   WebFundamentals/CSS/Internet/images/phone.png
+	new file:   WebFundamentals/CSS/Internet/index.html
+	new file:   WebFundamentals/CSS/Internet/style.css
+	new file:   WebFundamentals/CSS/JavaScriptBasics.zip
+	new file:   WebFundamentals/CSS/JavaScriptBasics/.DS_Store
+	new file:   WebFundamentals/CSS/JavaScriptBasics/index.html
+	new file:   WebFundamentals/CSS/JavaScriptBasics/style.css
+	new file:   WebFundamentals/CSS/PeriodicTable/.DS_Store
+	new file:   WebFundamentals/CSS/PeriodicTable/index.html
+	new file:   WebFundamentals/CSS/PeriodicTable/style.css
+	new file:   WebFundamentals/CSS/Portfolio.zip
+	new file:   WebFundamentals/CSS/Portfolio/.DS_Store
+	new file:   WebFundamentals/CSS/Portfolio/img/.DS_Store
+	new file:   WebFundamentals/CSS/Portfolio/img/CSS.png
+	new file:   WebFundamentals/CSS/Portfolio/img/HTML.png
+	new file:   WebFundamentals/CSS/Portfolio/img/JavaScript.png
+	new file:   WebFundamentals/CSS/Portfolio/img/LAMP.png
+	new file:   WebFundamentals/CSS/Portfolio/img/MEAN.png
+	new file:   WebFundamentals/CSS/Portfolio/img/RUBY.png
+	new file:   WebFundamentals/CSS/Portfolio/img/ajax.png
+	new file:   WebFundamentals/CSS/Portfolio/img/angular.png
+	new file:   WebFundamentals/CSS/Portfolio/img/bootstrap.png
+	new file:   WebFundamentals/CSS/Portfolio/img/c-sharp.png
+	new file:   WebFundamentals/CSS/Portfolio/img/codeigniter.png
+	new file:   WebFundamentals/CSS/Portfolio/img/codepen.png
+	new file:   WebFundamentals/CSS/Portfolio/img/d3.png
+	new file:   WebFundamentals/CSS/Portfolio/img/django.png
+	new file:   WebFundamentals/CSS/Portfolio/img/expressjs.png
+	new file:   WebFundamentals/CSS/Portfolio/img/familycontacts.png
+	new file:   WebFundamentals/CSS/Portfolio/img/fiveEleven.png
+	new file:   WebFundamentals/CSS/Portfolio/img/github.png
+	new file:   WebFundamentals/CSS/Portfolio/img/iOS-Swift.png
+	new file:   WebFundamentals/CSS/Portfolio/img/jQuery.png
+	new file:   WebFundamentals/CSS/Portfolio/img/lamode.png
+	new file:   WebFundamentals/CSS/Portfolio/img/linkedin.png
+	new file:   WebFundamentals/CSS/Portfolio/img/materialize.png
+	new file:   WebFundamentals/CSS/Portfolio/img/mongodb.png
+	new file:   WebFundamentals/CSS/Portfolio/img/mysql.png
+	new file:   WebFundamentals/CSS/Portfolio/img/nodejs.png
+	new file:   WebFundamentals/CSS/Portfolio/img/photo_of_me.jpg
+	new file:   WebFundamentals/CSS/Portfolio/img/php.png
+	new file:   WebFundamentals/CSS/Portfolio/img/portfolio_assignment.png
+	new file:   WebFundamentals/CSS/Portfolio/img/python.png
+	new file:   WebFundamentals/CSS/Portfolio/img/socket.png
+	new file:   WebFundamentals/CSS/Portfolio/img/sqlite.png
+	new file:   WebFundamentals/CSS/Portfolio/img/twitter.png
+	new file:   WebFundamentals/CSS/Portfolio/index.html
+	new file:   WebFundamentals/CSS/Portfolio/style.css
+	new file:   WebFundamentals/CSS/PositionPractice.zip
+	new file:   WebFundamentals/CSS/PositionPractice/.DS_Store
+	new file:   WebFundamentals/CSS/PositionPractice/index.html
+	new file:   WebFundamentals/CSS/PositionPractice/style.css
+	new file:   WebFundamentals/CSS/Python.zip
+	new file:   WebFundamentals/CSS/Python/.DS_Store
+	new file:   WebFundamentals/CSS/Python/index.html
+	new file:   WebFundamentals/CSS/Python/python.png
+	new file:   WebFundamentals/CSS/Python/style.css
+	new file:   WebFundamentals/CSS/Shapes.zip
+	new file:   WebFundamentals/CSS/Shapes/.DS_Store
+	new file:   WebFundamentals/CSS/Shapes/shapes.html
+	new file:   WebFundamentals/CSS/Shapes/style.css
+	new file:   WebFundamentals/CSS/SlackGroupProject.zip
+	new file:   WebFundamentals/CSS/SlackGroupProject/.DS_Store
+	new file:   WebFundamentals/CSS/SlackGroupProject/index.html
+	new file:   WebFundamentals/CSS/SlackGroupProject/style.css
+	new file:   WebFundamentals/CSS/about.txt
+	new file:   WebFundamentals/Git/about.txt
+	new file:   WebFundamentals/HTML/.DS_Store
+	new file:   WebFundamentals/HTML/FakeBlog/.DS_Store
+	new file:   WebFundamentals/HTML/FakeBlog/basic.html
+	new file:   WebFundamentals/HTML/FakeBlog/blog-styles.css
+	new file:   WebFundamentals/HTML/FakeBlog/fake-blog.html
+	new file:   WebFundamentals/HTML/FakeBlog/jimmy-butler.jpeg
+	new file:   WebFundamentals/HTML/FakeBlog/jimmy-butler.png
+	new file:   WebFundamentals/HTML/about.txt
+	new file:   WebFundamentals/HTML/assignments.txt
+	new file:   WebFundamentals/HTML/indentation.html
+	new file:   WebFundamentals/HTML/registration.html
+	new file:   WebFundamentals/JavaScript/.DS_Store
+	new file:   WebFundamentals/JavaScript/Birthday.html
+	new file:   WebFundamentals/JavaScript/CanIHaveTheTime.html
+	new file:   WebFundamentals/JavaScript/CanIHaveTheTime.js
+	new file:   WebFundamentals/JavaScript/IDoDeclare.js
+	new file:   WebFundamentals/JavaScript/about.txt
+	new file:   WebFundamentals/JavaScript/bday.html
+	new file:   WebFundamentals/JavaScript/untitled
+	new file:   WebFundamentals/about.txt
+	new file:   test
+
+Chriss-MacBook-Pro:CodingDojo croche314$ git commit -m "Initial machine to Github commit"
+[master (root-commit) e295dbc] Initial machine to Github commit
+ 147 files changed, 2669 insertions(+)
+ create mode 100644 .DS_Store
+ create mode 100644 MEAN/.DS_Store
+ create mode 100644 MEAN/about.txt
+ create mode 100644 Python/.DS_Store
+ create mode 100644 Python/about.txt
+ create mode 100644 Ruby/.DS_Store
+ create mode 100644 Ruby/about.txt
+ create mode 100644 WebFundamentals/.DS_Store
+ create mode 100644 WebFundamentals/BeltExam.zip
+ create mode 100644 WebFundamentals/BeltExam/.DS_Store
+ create mode 100644 WebFundamentals/BeltExam/images/.DS_Store
+ create mode 100755 WebFundamentals/BeltExam/images/building.png
+ create mode 100755 WebFundamentals/BeltExam/images/icon.png
+ create mode 100755 WebFundamentals/BeltExam/images/main_img.png
+ create mode 100644 WebFundamentals/BeltExam/index.html
+ create mode 100644 WebFundamentals/BeltExam/style.css
+ create mode 100644 WebFundamentals/CSS/.DS_Store
+ create mode 100644 WebFundamentals/CSS/DisplayingBlocks.zip
+ create mode 100644 WebFundamentals/CSS/DisplayingBlocks/.DS_Store
+ create mode 100644 WebFundamentals/CSS/DisplayingBlocks/images/.DS_Store
+ create mode 100644 WebFundamentals/CSS/DisplayingBlocks/images/adventure-cat.png
+ create mode 100644 WebFundamentals/CSS/DisplayingBlocks/images/aidorucat.png
+ create mode 100644 WebFundamentals/CSS/DisplayingBlocks/images/catandninja.png
+ create mode 100644 WebFundamentals/CSS/DisplayingBlocks/images/chellocat.jpg
+ create mode 100644 WebFundamentals/CSS/DisplayingBlocks/images/cherry.jpg
+ create mode 100644 WebFundamentals/CSS/DisplayingBlocks/images/coder2.jpg
+ create mode 100644 WebFundamentals/CSS/DisplayingBlocks/images/codercat.jpg
+ create mode 100644 WebFundamentals/CSS/DisplayingBlocks/images/cooler.png
+ create mode 100644 WebFundamentals/CSS/DisplayingBlocks/images/daftpunk.gif
+ create mode 100644 WebFundamentals/CSS/DisplayingBlocks/images/defunktocat.png
+ create mode 100644 WebFundamentals/CSS/DisplayingBlocks/images/dojocat.jpg
+ create mode 100644 WebFundamentals/CSS/DisplayingBlocks/images/domo-cat.png
+ create mode 100644 WebFundamentals/CSS/DisplayingBlocks/images/github.jpg
+ create mode 100644 WebFundamentals/CSS/DisplayingBlocks/images/heisencat.png
+ create mode 100644 WebFundamentals/CSS/DisplayingBlocks/images/ironcat.png
+ create mode 100644 WebFundamentals/CSS/DisplayingBlocks/images/jean-luc-picat.jpg
+ create mode 100644 WebFundamentals/CSS/DisplayingBlocks/images/kantana.jpg
+ create mode 100644 WebFundamentals/CSS/DisplayingBlocks/images/linkcat.png
+ create mode 100644 WebFundamentals/CSS/DisplayingBlocks/images/mario.png
+ create mode 100644 WebFundamentals/CSS/DisplayingBlocks/images/octobiwan.jpg
+ create mode 100644 WebFundamentals/CSS/DisplayingBlocks/images/oktobercat.png
+ create mode 100644 WebFundamentals/CSS/DisplayingBlocks/images/riddlocat.png
+ create mode 100644 WebFundamentals/CSS/DisplayingBlocks/images/stormtroopocat.png
+ create mode 100644 WebFundamentals/CSS/DisplayingBlocks/images/visionary.jpg
+ create mode 100644 WebFundamentals/CSS/DisplayingBlocks/index.html
+ create mode 100644 WebFundamentals/CSS/DisplayingBlocks/style.css
+ create mode 100644 WebFundamentals/CSS/GithubBlocks/.DS_Store
+ create mode 100644 WebFundamentals/CSS/GithubBlocks/github-icon.png
+ create mode 100644 WebFundamentals/CSS/GithubBlocks/index.html
+ create mode 100644 WebFundamentals/CSS/GithubBlocks/style.css
+ create mode 100644 WebFundamentals/CSS/Internet.zip
+ create mode 100644 WebFundamentals/CSS/Internet/.DS_Store
+ create mode 100644 WebFundamentals/CSS/Internet/images/.DS_Store
+ create mode 100644 WebFundamentals/CSS/Internet/images/ad_background.png
+ create mode 100644 WebFundamentals/CSS/Internet/images/client_server.jpg
+ create mode 100644 WebFundamentals/CSS/Internet/images/globe.png
+ create mode 100644 WebFundamentals/CSS/Internet/images/home.png
+ create mode 100644 WebFundamentals/CSS/Internet/images/html.png
+ create mode 100644 WebFundamentals/CSS/Internet/images/ninja.png
+ create mode 100755 WebFundamentals/CSS/Internet/images/phone.png
+ create mode 100644 WebFundamentals/CSS/Internet/index.html
+ create mode 100644 WebFundamentals/CSS/Internet/style.css
+ create mode 100644 WebFundamentals/CSS/JavaScriptBasics.zip
+ create mode 100644 WebFundamentals/CSS/JavaScriptBasics/.DS_Store
+ create mode 100644 WebFundamentals/CSS/JavaScriptBasics/index.html
+ create mode 100644 WebFundamentals/CSS/JavaScriptBasics/style.css
+ create mode 100644 WebFundamentals/CSS/PeriodicTable/.DS_Store
+ create mode 100644 WebFundamentals/CSS/PeriodicTable/index.html
+ create mode 100644 WebFundamentals/CSS/PeriodicTable/style.css
+ create mode 100644 WebFundamentals/CSS/Portfolio.zip
+ create mode 100644 WebFundamentals/CSS/Portfolio/.DS_Store
+ create mode 100644 WebFundamentals/CSS/Portfolio/img/.DS_Store
+ create mode 100755 WebFundamentals/CSS/Portfolio/img/CSS.png
+ create mode 100755 WebFundamentals/CSS/Portfolio/img/HTML.png
+ create mode 100755 WebFundamentals/CSS/Portfolio/img/JavaScript.png
+ create mode 100755 WebFundamentals/CSS/Portfolio/img/LAMP.png
+ create mode 100755 WebFundamentals/CSS/Portfolio/img/MEAN.png
+ create mode 100755 WebFundamentals/CSS/Portfolio/img/RUBY.png
+ create mode 100755 WebFundamentals/CSS/Portfolio/img/ajax.png
+ create mode 100755 WebFundamentals/CSS/Portfolio/img/angular.png
+ create mode 100755 WebFundamentals/CSS/Portfolio/img/bootstrap.png
+ create mode 100755 WebFundamentals/CSS/Portfolio/img/c-sharp.png
+ create mode 100755 WebFundamentals/CSS/Portfolio/img/codeigniter.png
+ create mode 100755 WebFundamentals/CSS/Portfolio/img/codepen.png
+ create mode 100755 WebFundamentals/CSS/Portfolio/img/d3.png
+ create mode 100755 WebFundamentals/CSS/Portfolio/img/django.png
+ create mode 100755 WebFundamentals/CSS/Portfolio/img/expressjs.png
+ create mode 100755 WebFundamentals/CSS/Portfolio/img/familycontacts.png
+ create mode 100755 WebFundamentals/CSS/Portfolio/img/fiveEleven.png
+ create mode 100755 WebFundamentals/CSS/Portfolio/img/github.png
+ create mode 100755 WebFundamentals/CSS/Portfolio/img/iOS-Swift.png
+ create mode 100755 WebFundamentals/CSS/Portfolio/img/jQuery.png
+ create mode 100755 WebFundamentals/CSS/Portfolio/img/lamode.png
+ create mode 100755 WebFundamentals/CSS/Portfolio/img/linkedin.png
+ create mode 100755 WebFundamentals/CSS/Portfolio/img/materialize.png
+ create mode 100755 WebFundamentals/CSS/Portfolio/img/mongodb.png
+ create mode 100755 WebFundamentals/CSS/Portfolio/img/mysql.png
+ create mode 100755 WebFundamentals/CSS/Portfolio/img/nodejs.png
+ create mode 100755 WebFundamentals/CSS/Portfolio/img/photo_of_me.jpg
+ create mode 100755 WebFundamentals/CSS/Portfolio/img/php.png
+ create mode 100755 WebFundamentals/CSS/Portfolio/img/portfolio_assignment.png
+ create mode 100755 WebFundamentals/CSS/Portfolio/img/python.png
+ create mode 100755 WebFundamentals/CSS/Portfolio/img/socket.png
+ create mode 100755 WebFundamentals/CSS/Portfolio/img/sqlite.png
+ create mode 100755 WebFundamentals/CSS/Portfolio/img/twitter.png
+ create mode 100644 WebFundamentals/CSS/Portfolio/index.html
+ create mode 100644 WebFundamentals/CSS/Portfolio/style.css
+ create mode 100644 WebFundamentals/CSS/PositionPractice.zip
+ create mode 100644 WebFundamentals/CSS/PositionPractice/.DS_Store
+ create mode 100644 WebFundamentals/CSS/PositionPractice/index.html
+ create mode 100644 WebFundamentals/CSS/PositionPractice/style.css
+ create mode 100644 WebFundamentals/CSS/Python.zip
+ create mode 100644 WebFundamentals/CSS/Python/.DS_Store
+ create mode 100644 WebFundamentals/CSS/Python/index.html
+ create mode 100644 WebFundamentals/CSS/Python/python.png
+ create mode 100644 WebFundamentals/CSS/Python/style.css
+ create mode 100644 WebFundamentals/CSS/Shapes.zip
+ create mode 100644 WebFundamentals/CSS/Shapes/.DS_Store
+ create mode 100644 WebFundamentals/CSS/Shapes/shapes.html
+ create mode 100644 WebFundamentals/CSS/Shapes/style.css
+ create mode 100644 WebFundamentals/CSS/SlackGroupProject.zip
+ create mode 100644 WebFundamentals/CSS/SlackGroupProject/.DS_Store
+ create mode 100644 WebFundamentals/CSS/SlackGroupProject/index.html
+ create mode 100644 WebFundamentals/CSS/SlackGroupProject/style.css
+ create mode 100644 WebFundamentals/CSS/about.txt
+ create mode 100644 WebFundamentals/Git/about.txt
+ create mode 100644 WebFundamentals/HTML/.DS_Store
+ create mode 100644 WebFundamentals/HTML/FakeBlog/.DS_Store
+ create mode 100644 WebFundamentals/HTML/FakeBlog/basic.html
+ create mode 100644 WebFundamentals/HTML/FakeBlog/blog-styles.css
+ create mode 100644 WebFundamentals/HTML/FakeBlog/fake-blog.html
+ create mode 100644 WebFundamentals/HTML/FakeBlog/jimmy-butler.jpeg
+ create mode 100644 WebFundamentals/HTML/FakeBlog/jimmy-butler.png
+ create mode 100644 WebFundamentals/HTML/about.txt
+ create mode 100644 WebFundamentals/HTML/assignments.txt
+ create mode 100644 WebFundamentals/HTML/indentation.html
+ create mode 100644 WebFundamentals/HTML/registration.html
+ create mode 100644 WebFundamentals/JavaScript/.DS_Store
+ create mode 100644 WebFundamentals/JavaScript/Birthday.html
+ create mode 100644 WebFundamentals/JavaScript/CanIHaveTheTime.html
+ create mode 100644 WebFundamentals/JavaScript/CanIHaveTheTime.js
+ create mode 100644 WebFundamentals/JavaScript/IDoDeclare.js
+ create mode 100644 WebFundamentals/JavaScript/about.txt
+ create mode 100644 WebFundamentals/JavaScript/bday.html
+ create mode 100644 WebFundamentals/JavaScript/untitled
+ create mode 100644 WebFundamentals/about.txt
+ create mode 160000 test
+Chriss-MacBook-Pro:CodingDojo croche314$ git status
+On branch master
+nothing to commit, working directory clean
+Chriss-MacBook-Pro:CodingDojo croche314$ git remote add origin https://github.com/croche314/DojoAssignments.git
+Chriss-MacBook-Pro:CodingDojo croche314$ git push -u origin master
+Counting objects: 158, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (156/156), done.
+Writing objects: 100% (158/158), 11.07 MiB | 1.38 MiB/s, done.
+Total 158 (delta 19), reused 0 (delta 0)
+remote: Resolving deltas: 100% (19/19), done.
+To https://github.com/croche314/DojoAssignments.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+Chriss-MacBook-Pro:CodingDojo croche314$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+  (commit or discard the untracked or modified content in submodules)
+
+	modified:   test (untracked content)
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Chriss-MacBook-Pro:CodingDojo croche314$ ls
+MEAN		Python		Ruby		WebFundamentals	test
+Chriss-MacBook-Pro:CodingDojo croche314$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+  (commit or discard the untracked or modified content in submodules)
+
+	modified:   test (untracked content)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	readme.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Chriss-MacBook-Pro:CodingDojo croche314$ git add .
+Chriss-MacBook-Pro:CodingDojo croche314$ git commit -m "added readme.md"
+[master 4bcb8c4] added readme.md
+ 1 file changed, 1 insertion(+)
+ create mode 100644 readme.md
+Chriss-MacBook-Pro:CodingDojo croche314$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+  (commit or discard the untracked or modified content in submodules)
+
+	modified:   test (untracked content)
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Chriss-MacBook-Pro:CodingDojo croche314$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+  (commit or discard the untracked or modified content in submodules)
+
+	modified:   test (untracked content)
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Chriss-MacBook-Pro:CodingDojo croche314$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   .DS_Store
+	deleted:    test
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Chriss-MacBook-Pro:CodingDojo croche314$ git add .
+Chriss-MacBook-Pro:CodingDojo croche314$ git commit
+Aborting commit due to empty commit message.
+Chriss-MacBook-Pro:CodingDojo croche314$ git commit -m "deleted test folder"
+[master d50e0b4] deleted test folder
+ 2 files changed, 1 deletion(-)
+ delete mode 160000 test
+Chriss-MacBook-Pro:CodingDojo croche314$ 
