@@ -1,0 +1,56 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#container {
+	width: 950px;
+	margin: 0 auto;
+}
+
+.element {
+	width: 50px;
+	height: 50px;
+	font-size: 75%;
+	text-align: center;
+	border: 1px solid #fff;
+}
+
+.caps {
+	font-size: 120%;
+	font-weight: bold;
+	color: #1913A2;
+}
+
+.right {
+	float: right;
+}
+
+.left {
+	float: left;
+}
+
+.clear {
+	clear: both;
+}
+
+.spacer {
+	color: #fff;
+	border: none;
+}
+
+.light-blue {
+	background-color: #689BFF;
+}
+
+.soft-red {
+	background-color: #FD9A98;
+}
+
+.yellow {
+	background-color: #FECB00;
+}
+
+.lime {
+	background-color: #1FCA21;
+}

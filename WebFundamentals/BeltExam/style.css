@@ -1,0 +1,206 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#container {
+	width: 1000px;
+	margin: 0 auto;
+	padding: 25px 15px;
+	background-color: #062134;
+	font-family: Arial, sans-serif;
+}
+
+/* Header */
+
+header {
+	margin-bottom: 25px;
+}
+
+nav {
+	display: inline-block;
+	width: 60%;
+}
+
+header h1 {
+	display: inline-block;
+	width: 35%;
+	color: #fff;
+	font-family: Arial, sans-serif;
+	text-transform: uppercase;
+	font-weight: normal;
+	text-indent: 25px;
+
+}
+
+header h1 span {
+	color: #1993E0;
+}
+
+header ul {
+	display: inline-block;
+	width: 100%;
+	text-align: right;
+	list-style-type: none;
+}
+
+header li {
+	display: inline-block;
+	width: 110px;
+
+}
+
+header a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.active {
+	color: #32678E;
+}
+
+/* Main Content */
+#main-content {
+	background-color: #fff;
+	padding: 20px;
+}
+
+#jumbotron {
+	margin-bottom: 20px;
+}
+
+#jumbotron img {
+	width: 100%;
+}
+
+.nugget {
+	display: inline-block;
+	width: 260px;
+	height: 260px;
+	background-color: #1468A8;
+	color: #fff;
+	padding: 10px;
+	margin-left: 25px;
+}
+
+.nugget img {
+	display: inline-block;
+	width: 40px;
+	vertical-align: top;
+}
+
+.nugget h2 {
+	display: inline-block;
+	width: 75%;
+	margin: 15px 0 0 0;
+	text-transform: uppercase;
+	font-weight: normal;
+}
+
+.nugget p {
+	padding: 15px;
+	font-size: 10pt
+}
+
+.btn-nugget {
+	display: inline-block;
+	width: 125px;
+	height: 50px;
+	color: #fff;
+	font-size: 11pt;
+	text-decoration: none;
+	text-align: center;
+	background-color:#dfbdfa;
+	box-shadow:inset 0px 1px 0px 0px #efdcfb;
+	background:linear-gradient(to bottom, #dfbdfa 5%, #bc80ea 100%);
+	border-radius:3px;
+	border:1px solid #c584f3;
+	text-shadow:0px 1px 0px #9752cc;
+	margin: 25px 0 20px 10px;
+}
+
+/* The World... and Testimonial */
+#world-and-testimonial {
+	font-size: 9pt;
+	margin-top: 30px;
+}
+
+#world-and-testimonial h3 {
+	text-transform: uppercase;
+	font-size: 16pt;
+	font-weight: normal;
+	margin-bottom: 15px;
+}
+
+#world-can-be-yours {
+	display: inline-block;
+	width: 600px;
+}
+
+#world-can-be-yours img {
+	display: inline-block;
+	width: 270px;
+	float: left;
+}
+
+#world-can-be-yours p {
+	display: inline-block;
+	width: 300px;
+	vertical-align: top;
+	padding: 0 10px 10px 10px;
+}
+
+#world-can-be-yours button {
+	color: #5082A6;
+	text-decoration: none;
+	font-size: 11pt;
+	padding-left: 10px;
+	border: 0;
+	background: 0;
+	box-shadow: none;
+}
+
+#testimonial {
+	display: inline-block;
+	width: 310px;
+	vertical-align: top;
+}
+
+#testimonial blockquote {
+	background-color: #DAEDFF;
+	font-style: italic;
+	font-size: 12pt;
+	padding: 20px 15px 40px 15px;
+	margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+	background-color: #DAEDFF;
+	text-align: center;
+	font-size: 10pt;
+	border-top: 2px solid #062134;
+}
+
+footer ul {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	list-style-type: none;
+	padding: 25px 0;
+}
+
+footer li {
+	display: inline-block;
+	width: 10%;
+}
+
+footer a {
+	color: #5082A6;
+	text-decoration: none;
+}
+
+.active-light {
+	color: #9FCCEE;
+}
+

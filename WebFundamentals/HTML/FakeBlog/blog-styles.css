@@ -1,0 +1,95 @@
+html {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+
+	color: #333;
+	font-family: 'Dosis';
+}
+
+#container {
+	background-image: url('jimmy-butler.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+
+	margin: 0;
+	padding: 25px 0;
+}
+
+#main-nav {
+	border: 3px solid #7E548C;
+	background-color: #C390D4;
+}
+
+#main-nav ul {
+	list-style-type: none;
+	text-indent: none;
+	display: inline-block;
+}
+
+#main-nav li {
+	display: inline-block;
+	font-size: 20px;
+
+	padding: 0 15px;
+}
+
+#main-nav a {
+	color: #333;
+	text-decoration: none;
+}
+
+
+h1 {
+	font-family: 'Barrio';
+	font-size: 50px;
+
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	width: 50%;
+}
+
+h2 {
+	text-align: right;
+	display: inline-block;
+}
+
+h3{
+	text-align: center;
+}
+
+p {
+	padding: 3% 30%;
+	font-size: 20px;
+}
+
+label.label-table {
+	font-size: 30px;
+	color: #333;
+	text-align: center;
+	margin: 0 auto;
+	display: block;
+}
+
+table {
+	margin: 0 auto;
+	font-size: 20px;
+}
+
+td {
+	border: 1px solid black;
+}
+
+ul {
+	text-align: center;
+}
+
+form {
+	text-align: center;
+}
