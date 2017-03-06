@@ -1,0 +1,51 @@
+html {
+	font-size: 1rem;
+}
+
+#container {
+	width: 80%;
+	margin: 0 auto;
+	font-family: 'Pacifico';
+}
+
+.warning {
+	font-family: Arial;
+	font-size: 1rem;
+	color: orange;
+}
+
+.hide {
+	display: none;
+}
+
+label {
+	display: block;
+	font-size: 1.5rem;
+	margin-top: 2%;
+}
+input {
+	display: block;
+	font-size: 1rem;
+	padding: 10px;
+	height: 30px;
+	border-radius: 5px;
+	border: 2px solid black;
+	box-shadow: 2px 2px 2px black;
+}
+
+input:hover {
+	cursor: pointer;
+}
+
+#txt-name {
+	display: inline-block;
+}
+
+#txt-name:hover {
+	cursor: text;
+}
+
+#btn-submit {
+	display: block;
+	margin-top: 50px;
+}

@@ -1,0 +1,14 @@
+$(document).ready(function(){
+	$('#AddClass button').click(function(){
+		$('#AddClass p').addClass('red');
+	});
+
+	$('#SlideToggle button').click(function(){
+		$('#SlideToggle img').slideToggle("slow", function(){
+
+		});
+	});
+});
+
+console.log('ready!');
+

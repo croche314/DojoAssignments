@@ -1,0 +1,63 @@
+body {
+	margin: 0;
+	padding: 0 25px;
+	font-family: 'Gloria Hallelujah';
+}
+.jquery-function {
+	padding: 20px;
+	border-bottom: 4px solid black;
+}
+
+.jquery-function button {
+	display:inline-block;
+	width: 10%;
+	height: 50px;
+	font-size: 16px;
+	font-family: 'Gloria Hallelujah';
+}
+
+.jquery-function h2 {
+	text-align: center;
+	font-size: 50px;
+}
+
+.jquery-function p {
+	display: inline-block;
+	width: 80%;
+	text-align: center;
+}
+
+.red {
+	background-color: red;
+}
+
+.inline-block {
+	display: inline-block;
+}
+
+#SlideToggle img {
+	display: block;
+	width: 250px;
+	margin: 0 auto;
+}
+
+#Show p {
+	display: none;
+}
+
+#SlideDown p {
+	display: none;
+}
+
+#FadeIn p {
+	display: none;
+}
+
+#val input {
+	display: block;
+	width: 300px;
+	height: 25px;
+	margin: 0 auto;
+	font-family: 'Gloria Hallelujah';
+	font-size: 18px;
+}

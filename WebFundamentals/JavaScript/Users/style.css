@@ -1,0 +1,37 @@
+#container {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+table {
+	width: 700px;
+}
+
+th {
+	text-align: left;
+	border-bottom: 5px solid black;
+}
+
+tr:nth-of-type(even) {
+	background-color: #CCC;
+}
+
+td {
+	border-bottom: 1px solid #CCC;
+}
+
+form {
+	margin-top: 100px;
+}
+
+input[type='text'] {
+	width: 150px;
+	height: 25px;
+	margin: 10px 0;
+}
+
+input[type='submit'] {
+	display: inline-block;
+	width: 150px;
+	height: 25px;
+}

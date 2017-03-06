@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQueryUI Ninja Puzzle</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link href="https://fonts.googleapis.com/css?family=Ceviche+One" rel="stylesheet"> 
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script>
+	$(function() {
+		$('#sortable').sortable({
+			revert: true
+		});
+		$('#draggable').draggable({
+			connectToSortable: "#sortable",
+			helper: "clone",
+			revert: "invalid"
+		});
+		$("ul,li").disableSelection();
+	});
+	</script>
+</head>
+
+<body>
+	<div id="container">
+		<h1>Ninja Puzzle!</h1>
+		<ul id="sortable">
+			<li class="ui-state-default"><img src="img/sort1.png" alt="#"></li>
+		  	<li class="ui-state-default"><img src="img/sort2.png" alt="#"></li>
+		  	<li class="ui-state-default"><img src="img/sort3.png" alt="#"></li>
+		  	<li class="ui-state-default"><img src="img/sort4.png" alt="#"></li>
+		  	<li class="ui-state-default"><img src="img/sort5.png" alt="#"></li>
+		</ul>
+	</div> <!-- #container -->
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Plan-a-Cruise</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="app.js"></script>
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet"> 
+
+</head>
+<body>
+	<div id="container">
+		
+		<h1>Welcome to the Coding Dojo Plan-a-Cruise!</h1>
+
+		<form>
+			<label for="date-from">From:</label>
+			<input id="date-from" class="datepicker" type="text" name="date-from" placeholder="Select a departure date">
+			<label for="date-to">To:</label>
+			<input id="date-to" class="datepicker" type="text" name="date-to" placeholder="Select a return date">
+
+			<label for="name">Name:</label>
+			<input id="txt-name" type="text" name="name" placeholder="Enter your full name">
+			<label id="invalid-name" class="warning hide">Please fill out this field with your full name</label>
+
+			<button id="btn-submit" class="ui-button ui-widget ui-corner-all" value="Check Dates">Check Dates</button>
+		</form>
+
+	</div> <!-- #container -->
+</body>
+</html>

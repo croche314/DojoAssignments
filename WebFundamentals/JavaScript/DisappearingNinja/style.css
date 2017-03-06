@@ -1,0 +1,27 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#container {
+	width: 960px;
+	margin: 0 auto;
+	text-align: center;
+	padding: 25px;
+}
+
+img {
+	display: inline-block;
+	width: 200px;
+}
+
+#restore {
+	display: block;
+	width: 10%;
+	height: 50px;
+	margin: 0 auto;
+	background-color: green;
+	color: white;
+	border-radius: 10px;
+	font-size: 20px;
+}

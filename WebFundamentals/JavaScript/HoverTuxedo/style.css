@@ -1,0 +1,15 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#container {
+	margin: 0 auto;
+	text-align: center;
+}
+
+img {
+	width: 150px;
+	text-align:center;
+	border: 3px solid black;
+}

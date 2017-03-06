@@ -1,0 +1,71 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#container {
+	width: 1000px;
+	margin: 0 auto;
+	font-family: 'Indie Flower';
+}
+
+header {
+	padding-left: 25px;
+}
+
+#poke-list {
+	display: inline-block;
+	width: 75%;
+	padding: 25px;
+}
+
+.pokemon {
+	display: inline-block;
+	vertical-align: top;
+	width: 150px;
+	height: 150px;
+	margin: 2px;
+	text-align: center;
+	box-shadow: 2px 2px 2px 2px grey;
+}
+
+.pokemon img {
+	max-width: 150px;
+}
+
+.pokemon:hover {
+	background-color: #333;
+	border: 2px solid black;
+	margin: 0;
+	box-shadow: 0;
+}
+
+#poke-stats {
+	position: fixed;
+	top: 0;
+	right: 0;
+	display: inline-block;
+	width: 400px;
+	padding-top: 50px;
+}
+
+#poke-stats h2 {
+	font-size: 35px;
+}
+
+#poke-stats h3 {
+	font-size: 25px;
+}
+
+#poke-stats h4 {
+
+}
+
+#poke-stats li {
+	list-style-type: none;
+	padding-left: 15px;
+}
+
+#poke-stats p {
+	padding-left: 15px;
+}

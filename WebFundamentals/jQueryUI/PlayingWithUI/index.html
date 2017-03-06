@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Playing with jQueryUI</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+	<script>
+		$(function() {
+			$("#accordion").accordion();
+		});
+	</script>
+
+	<style type="text/css">
+		#container {
+			width: 50%;
+			margin: 0 auto;
+		}
+	</style>
+	
+</head>
+<body>
+	<div id="container">
+		<div id="accordion">
+			<h3>Appetizers</h3>
+			<div>
+				<ul>
+					<li>Mauris mauris ante</li>
+					<li>blandit et</li>
+					<li>ultrices a</li>
+					<li>suscipit eget</li>
+				</ul>
+			</div>
+			<h3>Main Courses</h3>
+			<div>
+				<ul>
+					<li>Integer ut neque Vivamus nisi</li>
+					<li>metus, molestie vel</li>
+					<li>condimentum sit amet</li>
+					<li>Nam a nibh onec suscipit eros</li>
+				</ul>
+			</div>
+			<h3>Desserts</h3>
+			<div>
+				<ul>
+					<li>Nam mi</li>
+					<li>Proin viverra leo ut odio</li>
+					<li>Curabitur malesuada</li>
+					<li>Vestibulum a velit</li>
+				</ul>
+			</div>
+		</div>
+	</div> <!-- #container -->
+</body>
+</html>
