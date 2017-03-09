@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Success</title>
+</head>
+<body>
+	<div id="container">
+		<h3>Thanks {{ session['first_name'] }}, you are successfully registered.</h3>
+	</div>
+	<a href="/">Home</a>
+	<br><br>
+	{% for key, value in session.iteritems() %}
+		{% print key, ": ", value %}
+		<br>
+	{% endfor %}
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dojo Survey Index</title>
+	<link href="https://fonts.googleapis.com/css?family=Boogaloo" rel="stylesheet"> 
+	<link rel='stylesheet' type='text/css' href="{{ url_for('static',filename='style.css') }}">
+</head>
+<body>
+	<div id="container">
+		<form id="survey_form" action="/validate" method="post">
+			<span class="warning">
+				{% with messages = get_flashed_messages() %}
+					{% if messages %}
+						{% for message in messages %}
+							<p>{{ message }}</p>
+						{% endfor %}
+					{% endif %}
+				{% endwith %}
+			</span>
+
+			Your Name: <input type="text" name="name">
+			<br>
+			Dojo Location: 
+			<select name="location">
+				<option>San Jose</option>
+				<option>Seattle</option>
+				<option>Chicago</option>
+				<option>Los Angeles</option>
+			</select>
+			<br>
+			Favorite Language: 
+			<select name="language">
+				<option>Python</option>
+				<option>JavaScript</option>
+				<option>Ruby</option>
+				<option>C#</option>
+				<option>Perl</option>
+				<option>Java</option>
+			</select>
+			<br>
+			<span id="comment">Comment (optional):</span>
+			<textarea form="survey_form" name="comments">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</textarea>
+			<br>
+			<input type="submit" name="submit" value="Submit Survey">
+		</form>
+	</div>
+</body>
+</html>

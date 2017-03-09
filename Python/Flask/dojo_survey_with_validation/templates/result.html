@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Survey Results</title>
+	<link href="https://fonts.googleapis.com/css?family=Boogaloo" rel="stylesheet"> 
+	<link rel='stylesheet' type='text/css' href="{{ url_for('static',filename='style.css') }}">
+</head>
+<body>
+	<div id="info_display">
+		<h3>Submitted Info</h3>
+		<ul>
+			<li>Name: {{ name }}</li>
+			<li>Dojo Location: {{ location }}</li>
+			<li>Favorite Language: {{ language }}</li>
+			<li>Comment: {{ comments }}</li>
+		</ul>
+		<form action="/" method="post">
+			<input type="submit" name="submit" value="return to index">
+		</form>
+	</div>
+</body>
+</html>

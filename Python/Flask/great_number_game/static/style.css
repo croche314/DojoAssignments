@@ -1,0 +1,41 @@
+#container {
+	width: 400px;
+	margin: 0 auto;
+	font-family: 'Cabin Sketch';
+	text-align: center;
+	padding-top: 10px;
+}
+
+input[type='submit'] {
+	height: 40px;
+	font-family: 'Cabin Sketch';
+	font-size: 20px;
+	background-color: #fff;
+	border: 2px solid black;
+	margin-top: 25px;
+}
+
+input[type='text'] {
+	height: 25px;
+	border: 2px solid black;
+	text-align: center;
+	font-size: 20px;
+	padding: 5px;
+}
+
+#answer_box {
+	width: 300px;
+	height: 300px;
+	margin: 25px auto;
+	background-color: red;
+}
+
+#message, #current_guess {
+	color: white;
+	text-align: center;
+	font-size: 40px;
+}
+
+#current_guess {
+	line-height: 100px;
+}

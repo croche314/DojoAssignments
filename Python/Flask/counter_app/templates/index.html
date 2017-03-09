@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Counter - I barely know her!</title>
+	 <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet"> 
+	 <link rel='stylesheet' type="text/css" href="{{ url_for('static',filename='style.css') }}">
+</head>
+<body>
+	<div id="container">
+		<h1>Counter</h1>
+		<h4> 
+		{% if session['count'] != 0: %}
+			{{ count }} time(s).
+		{% endif %} 
+		</h4>
+		<form action="/plus_two">
+			<input type="submit" name="submit_plus_two" value="+2">
+		</form>
+		<form action="/reset">
+			<input type="submit" name="clear" value="Reset">
+		</form>
+		<h3>{{ message }}</h3>
+	</div>
+</body>
+</html>

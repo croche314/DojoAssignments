@@ -1,0 +1,36 @@
+#container {
+	width: 900px;
+	margin: 0 auto;
+	font-family: 'Cabin Sketch';
+	text-align: center;
+}
+
+form {
+	display: inline-block;
+	width: 200px;
+	text-align: center;
+}
+
+form img {
+	display: inline-block;
+	text-align: center;
+}
+
+input[type='submit'] {
+	height: 40px;
+	font-family: 'Cabin Sketch';
+	font-size: 20px;
+	background-color: #fff;
+	border: 2px solid black;
+	box-shadow: 1px 1px 5px black;
+}
+
+#activities_area {
+	width: 100%;
+}
+
+#reset {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+}

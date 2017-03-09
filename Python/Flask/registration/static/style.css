@@ -1,0 +1,22 @@
+#container {
+	width: 400px;
+	margin: 0 auto;
+	font-family: 'Cabin Sketch';
+	border: 2px dashed black;
+	padding: 10px;
+}
+
+input[type='submit'] {
+	height: 40px;
+	font-family: 'Cabin Sketch';
+	font-size: 20px;
+	background-color: #fff;
+	border: 2px solid black;
+	box-shadow: 1px 1px 2px black;
+}
+
+.warning {
+	display: block;
+	font-size: 14px;
+	color: orange;
+}

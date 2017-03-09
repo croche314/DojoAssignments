@@ -1,0 +1,12 @@
+#container {
+	width: 500px;
+	margin: 0 auto;
+	font-family: 'Cabin Sketch';
+	text-align: center;
+}
+
+img {
+	display: block;
+	width: 300px;
+	margin: 0 auto;
+}

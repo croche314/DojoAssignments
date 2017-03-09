@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My First Template</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div id="container">
+		<h1>My first template with embedded python</h1>
+		<p>Phrase: {{ phrase }}</p>
+		<p>Times: {{ times }}</p>
+		{% for x in range(0,5) %}
+		<p> {{ x }}</p>
+		{% endfor %}
+	</div> <!-- #container -->
+</body>
+</html>

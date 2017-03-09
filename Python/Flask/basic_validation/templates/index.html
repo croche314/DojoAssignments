@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Basic Validation Example</title>
+	<link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet"> 
+	<link rel='stylesheet' type="text/css" href="{{ url_for('static',filename='style.css') }}">
+</head>
+<body>
+	<div id="container">
+		<h1>Enter a Valid(Any) Name!</h1>
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				{% for message in messages %}
+					<p>{{ message }}</p>
+				{% endfor %}
+			{% endif %}
+		{% endwith %}
+		<form action='/process' method="post">
+			Name: <input type="text" name="name">
+			<input type="submit" value="Submit">
+		</form>
+	</div>
+</body>
+</html>

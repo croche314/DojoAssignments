@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet"> 
+	<link rel='stylesheet' type="text/css" href="{{ url_for('static',filename='style.css') }}">
+</head>
+<body>
+	<div id="container">
+		<h1>Register User</h1>
+		<span class="warning"> {{ message }} </span>
+		<form action='/validate' method="post">
+			<p> <!-- Email -->
+				<label for="email">Email:</label>
+				<input type="text" name="email">
+				<span class="warning"> {{ email_message }} </span
+			</p>
+			<p> <!-- First name -->
+				<label for="first_name">First name:</label>
+				<input type="text" name="first_name">
+				<span class="warning"> {{ first_name_message }} </span
+			</p>
+			<p> <!-- Last name -->
+				<label for="last_name">Last name:</label>
+				<input type="text" name="last_name">
+				<span class="warning"> {{ last_name_message }} </span
+			</p>
+			<p> <!-- Password -->
+				<label for="password">Password:</label>
+				<input type="password" name="password">
+				<span class="warning"> {{ password_message }} </span
+			</p>
+			<p> <!-- Confirm password -->
+				<label for="confirm_password">Confirm password:</label>
+				<input type="password" name="confirm_password">
+				<span class="warning"> {{ confirm_password_message }} </span
+			</p>
+
+			<p><input type="submit" value="Register"></p>
+		</form>
+	</div>
+</body>
+</html>

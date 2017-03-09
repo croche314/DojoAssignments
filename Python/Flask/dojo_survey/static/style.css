@@ -1,0 +1,65 @@
+#container {
+	width: 400px;
+	margin: 0 auto;
+	font-family: 'Boogaloo';
+	font-size: 20px;
+}
+
+#survey_form {
+	margin-top: 100px;
+	border: 2px solid black;
+	padding: 15px;
+}
+
+br {
+	margin: 10px 0;
+}
+
+input[type='text'] {
+	border: 2px solid black;
+	height: 20px;
+	font-size: 16px;
+	padding: 5px;
+}
+
+input[type='submit'] {
+	height: 40px;
+	font-family: 'Boogaloo';
+	font-size: 20px;
+	background-color: #fff;
+	border: 2px solid black;
+}
+
+input[type='submit']:active {
+	background-color: black;
+	color: #fff;
+}
+
+select {
+	font-size: 18px;
+}
+
+textarea {
+	height: 100px;
+	padding: 5px;
+	border: 2px solid black;
+}
+
+#comment {
+	vertical-align: top;
+}
+
+#info_display {
+	width: 400px;
+	margin: 0 auto;
+	font-family: 'Boogaloo';
+	font-size: 20px;
+	margin-top: 100px;
+	border: 2px solid black;
+	padding: 15px;
+}
+
+#info_display h3 {
+	text-decoration: underline;
+	text-align: center;
+}

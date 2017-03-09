@@ -1,0 +1,15 @@
+#container {
+	width: 400px;
+	margin: 0 auto;
+	font-family: 'Josefin Sans';
+	padding-top: 100px;
+}
+
+input[type='submit'] {
+	height: 40px;
+	font-family: 'Josefin Sans';
+	font-size: 20px;
+	background-color: #fff;
+	border: 2px solid black;
+}
+
