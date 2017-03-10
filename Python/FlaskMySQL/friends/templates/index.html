@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Friends</title>
+	<link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet"> 
+	<link rel='stylesheet' type="text/css" href="{{ url_for('static',filename='style.css') }}">
+</head>
+<body>
+	<div id="container">
+		<h1>These are all my friends</h1>
+		<p>First Name: Jay</p>
+		<p>Last Name: Patel</p>
+		<p>Occupation: Instructor</p>
+		<hr>
+		<p>First Name: Jimmy</p>
+		<p>Last Name: Jun</p>
+		<p>Occupation: Instructor</p>
+		<hr>
+		<h2>Add a Friend</h2>
+		<form action="/friends" method="POST">
+			<label for="first_name">First Name:<input type="text" name="first_name"></label>
+			<label for="last_name">Last Name:<input type="text" name="last_name"></label>
+			<label for="occupation"><input type="text" name="occupation"></label>
+			<input type="submit" value="Add">
+		</form>
+	</div>
+</body>
+</html>
