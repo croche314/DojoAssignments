@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Random Word Generator</title>
+	<style type="text/css">
+		body {
+			text-align: center;
+			margin: 100px auto;
+		}
+
+		#random_word {
+			color: blue;
+			font-family: 'Arial';
+		}
+
+		a {
+			display: block;
+			width: 25%;
+			margin: 10px auto;
+			border: 3px solid black;
+			padding: 20px;
+			color: black;
+			text-decoration: none;
+			text-transform: uppercase;
+		}
+	</style>
+</head>
+<body>
+	<h3>Random Word (attempt #{{ request.session.attempts }})</h3>
+	<div id="random_word">
+		<h1> {{ request.session.word }} </h1>
+	</div>
+	<a href="/generate">Generate</a>
+</body>
+</html>

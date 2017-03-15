@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Index</title>
+</head>
+<body>
+	<h1>Hello Index</h1>
+	{% if request.session.name %}
+		<h2>Hello {{ request.session.name }}</h2>
+	{% endif %}
+	<form action="/new_user" method="POST">
+		{% csrf_token %}
+		<input type="text" name="first_name">
+		<input type="submit" value="submit">
+	</form>
+</body>
+</html>
