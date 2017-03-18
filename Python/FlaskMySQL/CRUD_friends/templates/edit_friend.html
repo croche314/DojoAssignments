@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit Friend</title>
+	<link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet"> 
+	<link rel='stylesheet' type="text/css" href="{{ url_for('static',filename='style.css') }}">
+</head>
+<body>
+	<div id="container">
+
+		<h1>Edit Friend</h1>
+		<img id="friend_img" src="{{url_for('static',filename='img/user-avatar.png')}}" alt='friends'>
+
+		<div id="messages">
+			{% with messages = get_flashed_messages() %}
+				{% if messages %}
+					{% for message in messages %}
+						<span class="flash_message">{{ message }}</span>
+					{% endfor %}
+				{% endif %}
+			{% endwith %}
+		</div>
+
+		<!-- 'Edit Friend' form-->
+		<form id="friend_form" action="/friends/{{this_friend.id}}" method="POST">
+			<label for="html_first_name">First name:
+				<input type="text" name="html_first_name" value="{{this_friend.first_name}}">
+			</label>
+			<label for="html_last_name">Last name:
+				<input type="text" name="html_last_name" value="{{this_friend.last_name}}">
+			</label>
+			<label for="html_email">Email:
+				<input type="text" name="html_email" value="{{this_friend.email}}">
+			</label>
+			<input type="submit" value="Update">
+		</form>
+	</div> <!-- #container -->
+</body>
+</html>

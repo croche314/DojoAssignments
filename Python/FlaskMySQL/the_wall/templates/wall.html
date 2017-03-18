@@ -1,0 +1,53 @@
+{% include 'header.html' %}
+
+<div id="main_content">
+	<!-- Flash Messages -->
+	<div class="flash_messages">
+			{% with messages = get_flashed_messages() %} 
+				{% if messages %} 
+					{% for message in messages %}
+		    			<p class="msg_success">{{message}}</p>
+		   			 {% endfor %} 
+		    	{% endif %} 
+		    {% endwith %}
+	</div>
+
+	<!-- Post New Message -->
+	<div id="post_a_message">
+		<form action="/post_message/{{session['id']}}" method="POST">
+			<textarea name="html_message"></textarea>
+			<input type="submit" value="Post a message">
+		</form>
+	</div> <!-- #post_a_message -->
+
+	<!-- Display All Messages -->
+	{%for message in all_messages %}
+		<div class="message">
+			<h3>{{ message['first_name'] + " " + message['last_name']}} <span class="email_address">({{ message['email'] }}) wrote:</span> </h3> 
+			<span class="dateline">{{ message['created_at'] }}</span>
+			<p class="one_message">
+				{{ message['message'] }}
+				
+				<!-- print all_comments -->
+				<div class="comment">
+					{% for comment in all_comments %}
+						{% if message['message_id'] == comment['message_id'] %}
+						<h4>{{ comment['first_name'] + " " + comment['last_name'] }} <span class="email_address">({{ comment['email']}} )</span> wrote:</h4>
+						<span class="dateline">{{ comment['comment_created'] }} </span>
+							<p>{{ comment['comment'] }}</p>
+						{% endif %}
+					{% endfor %}
+				</div><!-- .comment -->
+			</p> <!-- .one_message  -->
+			<div class="post_a_comment">
+				<form action="/post_comment/{{ message['message_id'] }}" method="POST">
+					<textarea name="html_comment"></textarea>
+					<input type="submit" value="Post a comment">
+				</form>
+			</div> <!-- .post_a_comment -->
+		</div> <!-- .message -->
+	{% endfor %}
+
+</div> <!-- #main_content -->
+{% include 'footer.html' %}
+

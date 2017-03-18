@@ -1,0 +1,201 @@
+#container {
+	width: 800px;
+	margin: 0 auto;
+	font-family: 'Source Sans Pro';
+}
+
+h1,h2,h3,h4,h5, footer{
+	font-family: 'Source Sans Pro';
+	font-weight: bold;
+	font-style: italic;
+}
+
+h1 {
+	font-family: 'Cabin Sketch';
+	font-size: 60px;
+	font-weight: normal;
+	margin: 15px;
+	font-variant: small-caps;
+	font-style: normal;
+}
+
+header {
+	border-radius: 10px;
+	border: 2px solid black;
+	box-shadow: 2px 2px 2px black;
+	background-color: #095A3C;
+	padding: 10px;
+	color: white;
+}
+
+header h1 {
+	display: inline-block;
+	width: 50%;
+}
+
+header a {
+	color: #FECD08;
+}
+
+input[type='submit'] {
+	font-family: 'Cabin Sketch';
+	background-color: #095A3C;
+	color: #FECD08;
+	border: 2px solid black;
+	box-shadow: 1px 1px 2px black;
+	margin: 0 auto;
+}
+
+#login {
+	display: inline-block;
+	width: 40%;
+	text-align: right;
+}
+
+.welcome {
+
+}
+
+.login_logout {
+	margin-left: 25px;
+}
+
+#login_form {
+	width: 400px;
+	margin: 10px auto;
+}
+
+#login_form h2 {
+	text-align: center;
+}
+
+#login_form label {
+	display: block;
+	margin: 15px auto;
+}
+
+#login_form input {
+	height: 40px;
+	font-size: 20px;
+	padding: 5px;
+	margin-left: 10px;
+}
+
+#login_form input[type='submit'] {
+	display: block;
+	width: 100%;
+	font-family: 'Cabin Sketch';
+	background-color: #095A3C;
+	color: #FECD08;
+	border: 2px solid black;
+	box-shadow: 1px 1px 2px black;
+	margin: 0 auto;
+}
+
+#main_content {
+	min-height: 200px;
+}
+
+.flash_messages p {
+	color: #095A3C;
+	text-align: center;
+}
+
+.msg_success {
+
+}
+
+#post_a_message {
+	display: block;
+	margin-bottom: 50px;
+}
+
+#post_a_message textarea {
+	display: block;
+	width: 90%;
+	height: 100px;
+	margin: 20px;
+	padding: 15px;
+	font-size: 20px;
+	font-family: 'Source Sans Pro';
+	text-align: center;
+}
+
+#post_a_message input[type="submit"] {
+	float: right;
+	margin-right: 75px;
+}
+
+.message {
+	width: 80%;
+	margin: 15px auto;
+	border-bottom: 1px solid #095A3C;
+}
+
+.message h3 {
+	display: inline-block;
+	width: 70%;
+	margin-bottom:25px;
+	color: #095A3C;
+}
+
+.one_message {
+	line-height: 1.5em;
+	font-size: 18px;
+	font-weight: 300;
+	margin-top: 0;
+}
+
+.comment {
+	width: 80%;
+	margin: 5px auto;
+}
+
+.comment h4{
+	display: inline-block;
+	width: 70%;
+	font-size: 14px;
+	margin: 0;
+	padding: 0;
+}
+
+.comment p {
+	font-weight: 300;
+	font-size: 14px;
+	margin: 0;
+	padding: 0;
+}
+
+.post_a_comment {
+	margin-bottom: 10px;
+}
+
+.post_a_comment textarea {
+	display: block;
+	width: 50%;
+	height: 25px;
+	margin: 20px auto;
+	padding: 15px;
+	font-size: 20px;
+	font-family: 'Source Sans Pro';
+	text-align: center;
+	border: 1px sold black;
+}
+
+.post_a_comment input[type="submit"] {
+	margin-left: 500px;
+}
+
+.email_address {
+	font-size: 14px;
+}
+
+.dateline {
+	text-align: right;
+}
+
+footer {
+	text-align: center;
+	padding: 20px;
+	border-top: 2px solid black;
+}

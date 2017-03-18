@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Friends</title>
+	<link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet"> 
+	<link rel='stylesheet' type="text/css" href="{{ url_for('static',filename='style.css') }}">
+</head>
+<body>
+	<div id="container">
+
+		<h1>My Friends</h1>
+		<img src="{{url_for('static',filename='img/friends.png')}}" alt='friends'>
+
+		<div id="messages">
+			{% with messages = get_flashed_messages() %}
+				{% if messages %}
+					{% for message in messages %}
+						<span class="flash_message">{{ message }}</span>
+					{% endfor %}
+				{% endif %}
+			{% endwith %}
+		</div>
+
+		<table>
+			<tr>
+				<th>ID</th><th>First Name</th><th>Last Name</th><th>Email</th><th>Created</th>
+			</tr>
+			{% for friend in all_friends %}
+				<tr>
+					<td>{{friend.id}}</td><td>{{friend.first_name}}</td><td>{{friend.last_name}}</td><td>{{friend.email}}</td><td>{{friend.created_at}}</td>
+					<!-- Edit -->
+					<td>
+						<form action="/friends/{{friend.id}}/edit" method="GET">
+							<input type="submit" value="Edit">
+						</form>
+					</td>
+					<!-- Delete -->
+					<td>
+						<form action="/friends/{{friend.id}}/delete" method="POST">
+							<input type="submit" value="Delete">
+						</form>
+					</td>
+				</tr>
+			{% endfor %}
+		</table>
+
+		<!-- 'Create Friend' form-->
+		<form id="friend_form" action="/friends" method="POST">
+			<h2>Add New Friend</h2>
+			<label for="html_first_name">First name:<input type="text" name="html_first_name"></label>
+			<label for="html_last_name">Last name:<input type="text" name="html_last_name"></label>
+			<label for="html_email">Email:<input type="text" name="html_email"></label>
+			<input type="submit" value="Add">
+		</form>
+	</div> <!-- #container -->
+</body>
+</html>

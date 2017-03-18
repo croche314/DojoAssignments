@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Friends</title>
+	<link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet"> 
+	<link rel='stylesheet' type="text/css" href="{{ url_for('static',filename='style.css') }}">
+</head>
+<body>
+	<div id="container">
+	<!--{{ all_friends }}-->
+	<br><br><br>
+		ID<h3>{{ one_friend['id'] }}</h3>
+		Name<h1>{{ one_friend['first_name'] + " " + one_friend['last_name'] }}</h1>
+		Occupation<h2>{{ one_friend['occupation'] }}</h2>
+	</div>
+</body>
+</html>

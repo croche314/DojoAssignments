@@ -1,0 +1,45 @@
+body {
+	font-family: 'Cabin Sketch';
+}
+
+#container {
+	width: 400px;
+	margin: 0 auto;
+	font-family: 'Cabin Sketch';
+	text-align: center;
+}
+
+#messages {
+	width: 380px;
+	height: 50px;
+	font-size: 20px;
+	color: white;
+	background-color: orange;
+	border-radius: 5px;
+}
+
+#messages p {
+	padding-top: 10px;
+}
+
+input[type='submit'] {
+	height: 40px;
+	font-family: Helvetica;
+	font-size: 20px;
+	background-color: #fff;
+	border: 2px solid black;
+	box-shadow: 1px 1px 2px black;
+}
+
+#email_list {
+	text-align: left;
+	padding: 10px;
+}
+
+td, th {
+	padding: 5px;
+}
+
+tr:nth-of-type(odd) {
+	background-color: #EEE;
+}

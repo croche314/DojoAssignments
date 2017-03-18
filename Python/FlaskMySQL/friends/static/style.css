@@ -2,4 +2,28 @@
 	width: 400px;
 	margin: 0 auto;
 	font-family: 'Cabin Sketch';
+	text-align: center;
+}
+
+h1,h2,h3 {
+	text-align: center;
+}
+
+label {
+	display: block;
+}
+
+input[type='submit'] {
+	height: 40px;
+	font-family: 'Cabin Sketch';
+	font-size: 20px;
+	background-color: #fff;
+	border: 2px solid black;
+	box-shadow: 1px 1px 2px black;
+}
+
+input[type='text'] {
+	height: 30px;
+	font-size: 20px;
+	margin: 5px;
 }

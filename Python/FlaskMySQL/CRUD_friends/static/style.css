@@ -1,0 +1,73 @@
+#container {
+	width: 600px;
+	margin: 0 auto;
+	font-family: 'Cabin';
+	padding: 15px;
+}
+
+img {
+	display: block;
+	width: 100px;
+	margin: 15px auto;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+h1 {
+	text-align: center;
+}
+
+.flash_message {
+	display: block;
+	color: white;
+	background-color: orange;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+td, th {
+	padding: 5px;
+}
+
+tr:nth-of-type(odd) {
+	background-color: #EEE;
+}
+
+input[type='submit'] {
+	height: 30px;
+	font-family: Helvetica;
+	font-size: 15px;
+	background-color: #fff;
+	border: 2px solid black;
+	box-shadow: 1px 1px 2px grey;
+	border-radius: 5px;
+
+}
+
+#friend_form {
+	display: block;
+	width: 400px;
+	text-align: center;
+	border: 2px solid black;
+	padding: 10px;
+	margin: 20px auto;
+}
+
+#friend_form label {
+	display: block;
+	font-size: 20px;
+}
+
+#friend_form input {
+	font-size: 16px;
+	height: 30px;
+	margin: 5px;
+	padding: 2px;
+}
+
+#friend_form input[type='submit'] {
+	display: block;
+	width: 50%;
+	margin: 10px auto;
+}
+

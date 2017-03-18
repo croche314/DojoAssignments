@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Email Validation</title>
+	<link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet"> 
+	<link rel='stylesheet' type="text/css" href="{{ url_for('static',filename='style.css') }}">
+	<style type="text/css">
+		input[type=text] {
+			width: 300px;
+			height: 30px;
+			border: 2px solid black;
+			font-size: 16px;
+			padding: 5px;
+			font-style: italic;
+		}
+
+		#messages {
+			background-color: green;
+			height: 150px;
+		}
+
+		#messages p {
+			line-height: 50px;
+			vertical-align: middle;
+}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="messages">
+			{% with messages = get_flashed_messages() %}
+				{% if messages %}
+					{% for message in messages %}
+						<p>{{message}}</p>
+					{% endfor %}
+				{% endif %}
+			{% endwith %}
+		</div>
+	</div>
+
+	<div id="email_list">
+			<h2>Email Addresses Entered:</h2>
+			<table>
+				<tr>
+					<th>ID</th><th>Email Address</th><th>Created At</th>
+				</tr>
+
+				{% for user in all_emails %}
+					<tr>
+						<td>{{user.id}}</td><td>{{user.email_address}}</td><td>{{user.created_at}}</td>
+					</tr>
+				{% endfor %}
+			</table>
+		</div>
+</body>
+</html>
