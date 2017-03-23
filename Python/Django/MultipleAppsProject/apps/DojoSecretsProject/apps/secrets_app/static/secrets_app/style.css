@@ -1,0 +1,77 @@
+#container {
+	width: 600px;
+	margin: 50px auto;
+	font-family: 'Acme';
+}
+
+.success {
+	color: blue;
+}
+
+.user_badge {
+	font-family: 'Acme';
+}
+
+.button {
+	display: inline-block;
+	font-family: 'Acme';
+	font-size: 15px;
+	background-color: #fff;
+	color: black;
+	border: 2px solid black;
+	box-shadow: 1px 1px 2px black;
+	text-decoration: none;
+	padding: 5px;
+}
+
+h1,h2 {
+	text-align: center;
+}
+
+#register_form {
+	float: left;
+}
+
+#login_form {
+	float: right;
+}
+
+table {
+	
+}
+
+.display_data tr:nth-of-type(odd){
+	background-color: #EEE;
+}
+
+td {
+	padding: 5px;
+}
+
+#secrets_form textarea {
+	display: block;
+	width: 600px;
+	height: 100px;
+	margin: 0 auto;
+	font-family: 'Acme';
+}
+
+.popular_link {
+	float: right;
+}
+
+#secrets_form input[type="submit"]{
+	width: 200px;
+}
+
+p.secret {
+	font-family: 'Open Sans';
+}
+
+.secret a,.secret i {
+	margin-left: 20px;
+}
+
+.secret i {
+	color: green;
+}

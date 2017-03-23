@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Email Validation</title>
+	 <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet"> 
+	 {% load staticfiles %}
+	 <link rel="stylesheet" type="text/css" href="{% static 'email_validation/style.css' %}">
+</head>
+<body>
+	<div id="container">
+		{% if messages %}
+			{% for message in messages %}
+				<p class="success">{{ message }}</p>
+			{% endfor %}
+		{% endif %}
+		
+		<h2>Email Addresses Entered:</h2>
+		<table>
+			{% for row in all_emails %}
+				<tr>
+					<td>{{ row.email }}</td><td>{{ row.created_at }}</td><td><a href="/delete/{{row.id}}">Delete</a></td>
+				</tr>
+			{% endfor %}
+		</table>
+	</div>
+</body>
+</html>

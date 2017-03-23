@@ -1,0 +1,24 @@
+{% include 'book_reviews/header.html' %}
+<div id="container">
+	<nav>
+		<a href="/books">Home</a>&nbsp;&nbsp;&nbsp;
+		<a href="/books/add">Add Book and Review</a>&nbsp;&nbsp;&nbsp;
+		<a href="/logout">Logout</a>
+	</nav>
+
+	<h1>User Alias: {{this_user.alias}}</h1>
+	<h2>Name: {{this_user.name}}</h2>
+	<h2>Email: {{this_user.email}}</h2>
+	<h2>Total Reviews: </h2>
+	<br><br><br>
+	Posted Reviews on the following books:
+	<br>
+	{% for book in my_reviewed_books %}
+		<a href="/books/{{book.id}}">{{book.title}}</a>
+		<br>
+	{% endfor %}
+
+
+</div>
+</body>
+</html>

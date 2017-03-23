@@ -1,0 +1,36 @@
+{% include 'book_reviews/header.html' %}
+<div id="container">
+	<h1>Add a New Book Title and a Review</h1>
+	<nav>
+		<a href="/books/add">Add Book and Review</a>&nbsp;
+		<a href="/logout">Logout</a>
+	</nav>
+
+	<form id="form_add_book" action="/books/create" method="post">
+		{% csrf_token %}
+		<label>Book Title:</label><input type="text" name="txt_book_title"><br>
+		<label>Author:</label><br>
+		Choose from the list: 
+		<select name="select_author">
+			<option value="">Stephen King</option>	
+		</select> <br>
+		Or add a new author: <input type="text" name="txt_author"><br>
+		<label>Review:</label><br>
+		<textarea id="review_text" name="review_text"></textarea>
+		<br>
+		<label>Rating:</label>
+		<select name="stars">
+			<option value="5">5</option>
+			<option value="4">4</option>
+			<option value="3">3</option>
+			<option value-"2">2</option>
+			<option value="1">1</option>
+		</select> stars
+		<br><br>
+		<input type="submit" value="Add Book and Review">
+	</form>
+
+
+</div>
+</body>
+</html>

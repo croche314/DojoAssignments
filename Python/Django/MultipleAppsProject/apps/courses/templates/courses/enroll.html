@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Courses</title>
+	<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> 
+	{% load staticfiles %}
+	<link type="text/css" rel="stylesheet" href="{% static 'courses/style.css' %}">
+</head>
+<body>
+	<h1>Add User to Course</h1>
+	<p>current user: {{user_id}}</p>
+	<form action="{% url 'courses:commit_enroll'  %}" method='post'>
+		{% csrf_token %}
+		<select name="select_user">
+			<option>User</option>
+			{% for user in all_users %}
+				<option value="{{user.id}}">{{user.first_name}} {{user.last_name}}</option>
+			{% endfor %}
+		</select>
+		<select name="select_course">
+			<option>Courses</option>
+			{% for course in all_courses %}
+				<option value="{{course.id}}">{{course.name}}</option>
+			{% endfor %}
+		</select>
+		<input type="submit" value="Add User To Course">
+	</form>
+
+	<table>
+		<tr>
+			<th>Course</th><th>Title</th><th>Number of students</th>
+		</tr>
+		{% for course in all_courses %}
+			<tr>
+				<td>{{course.id}}</td><td>{{course.name}}</td><td>{{course.num_of_students}}</td>
+			</tr>
+		{% endfor %}
+	</table>
+</body>
+</html>

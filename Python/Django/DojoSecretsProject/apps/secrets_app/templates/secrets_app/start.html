@@ -1,0 +1,52 @@
+{% include 'secrets_app/header.html' %}
+<div id="container">
+<h1>Welcome to Dojo Secrets</h1>
+	{% for message in messages %}
+		<p>{{message}}</p>
+	{% endfor %}
+	<!-- Register form -->
+	<form id="register_form" action="/create_user" method="post">
+		{% csrf_token %}
+		<fieldset>
+			<legend>Register</legend>
+			<table>
+				<tr>
+					<td>First name:</td><td><input type="text" name="txt_first_name">*</td>
+				</tr>
+				<tr>
+					<td>Last name:</td><td><input type="text" name="txt_last_name">*</td>
+				</tr>
+				<tr>
+					<td>E-mail:</td><td><input type="text" name="txt_email">*</td>
+				</tr>
+				<tr>
+					<td>Password:</td><td><input type="password" name="txt_password">*</td>
+				</tr>
+				<tr>
+					<td>Confirm password:</td><td><input type="password" name="txt_confirm_password">*</td>
+				</tr>
+			</table>
+			<input class="button" type="submit" value="Register">
+		</fieldset>
+	</form>
+
+	<!-- Login form -->
+	<form id="login_form" action="/login" method="post">
+		{% csrf_token %}
+		<fieldset>
+			<legend>Log In</legend>
+			<table>
+				<tr>
+					<td>E-mail:</td><td><input type="text" name="txt_email">*</td>
+				</tr>
+				<tr>
+					<td>Password:</td><td><input type="password" name="txt_password">*</td>
+				</tr>
+			</table>
+			<input class="button" type="submit" value="Log In">
+		</fieldset>
+	</form>
+</div>
+
+</body>
+</html>

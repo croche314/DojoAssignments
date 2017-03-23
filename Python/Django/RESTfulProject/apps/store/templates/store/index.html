@@ -1,0 +1,27 @@
+{% include 'store/header.html' %}
+	<div id="container">
+		<h1>Products</h1>
+		{% if messages %}
+			{% for message in messages %}
+				<p>{{ message }}</p>
+			{% endfor %}
+		{% endif %}
+		<table>
+			<tr>
+				<th>Name</th><th>Description</th><th>Price</th><th colspan="3">Actions</th>
+			</tr>
+			{% for product in all_products %}
+				<tr>
+					<td>{{product.name}}</td>
+					<td>{{product.description}}</td>
+					<td>{{product.price}}</td>
+					<td><a href="/show/{{product.id}}">Show</a></td>
+					<td><a href="/edit/{{product.id}}">Edit</a></td>
+					<td><a class="button" href="destroy/{{product.id}}">Remove</a></td>
+				</tr>
+			{% endfor %}
+		</table>
+		<br>
+		<a class="button" href="/new">Add a new product</a>
+	</div> <!-- #container -->
+{% include 'store/footer.html' %}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Email Validation</title>
+	 <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet"> 
+	 {% load staticfiles %}
+	 <link rel="stylesheet" type="text/css" href="{% static 'email_validation/style.css' %}">
+</head>
+<body>
+	<div id="container">
+		<h1>Email Validation</h1>
+		<br>
+		{% if messages %}
+			{% for message in messages %}
+				<p class="warning">{{ message }}</p>
+			{% endfor %}
+		{% endif %}
+		<form action="/validate" method="post">
+			{% csrf_token %}
+			<label for="txt_email">Email Address:</label> <br>
+			<input type="text" name="txt_email"><br>
+			<input class="button" type="submit" value="Submit">
+		</form>
+	</div>
+</body>
+</html>

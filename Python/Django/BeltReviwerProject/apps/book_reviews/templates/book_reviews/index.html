@@ -1,0 +1,34 @@
+{% include 'book_reviews/header.html' %}
+<div id="container">
+	<span class="user_badge">Welcome, {{request.session.alias}}!</span>
+
+	<nav>
+		<a href="/books/add">Add Book and Review</a>&nbsp;
+		<a href="/logout">Logout</a>
+	</nav>
+
+	<div id="recent_reviews">
+		<h2>Recent Book Reviews:</h2>
+		{% for review in recent_reviews %}
+			<div class="one_book_review">
+				<h3><a href="/books/{{review.book.id}}">{{review.book.title}}</a></h3>
+				Rating: {{review.rating}} <br>
+				<a href="users/{{review.user.id}}">{{review.user.alias}}</a> says: <i>{{review.review_text}}</i>
+				<br>
+				<i>Posted on {{review.created_at}}</i>
+			</div>
+		{% endfor %}
+	</div>
+
+		<div id="other_reviews">
+			<h2>Other Books with Reviews:</h2>
+			{% for book in not_recent_set %}
+				{% if book.id not in book_list %}
+					<p><a href="books/{{book.id}}">{{book.title}}</a></p>
+				{% endif %}
+			{% endfor %}
+		</div>
+	
+</div>
+</body>
+</html>

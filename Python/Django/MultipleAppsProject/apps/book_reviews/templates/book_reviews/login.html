@@ -1,0 +1,33 @@
+{% include 'book_reviews/header.html' %}
+
+<div id="container">
+	<h1>Welcome</h1>
+
+	<form id="form_register" action="/register" method="post">
+		{% csrf_token %}
+		<fieldset>
+			<legend>Register</legend>
+			<label>Name:</label> <input type="text" name="txt_name"><br>
+			<label>Alias:</label> <input type="text" name="txt_alias"><br>
+			<label>Email:</label> <input type="text" name="txt_email"><br>
+			<label>Password:</label> <input type="password" name="txt_password">
+			<br> *Password must be at least 8 characters
+			<label>Confirm Password:</label> <input type="password" name="txt_confirm_pw"><br><br>
+			<input class="button" type="submit" value="register">
+		</fieldset>
+	</form>
+
+	<form id="form_login" action="/login" method="post">
+		{% csrf_token %}
+		<fieldset>
+			<legend>Log In</legend>
+			<label>Email:</label><input type="text" name="txt_email"><br>
+			<label>Password:</label> <input type="password" name="txt_password">
+			<br><br>
+			<input type="submit" value="Log In">
+		</fieldset>
+	</form>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{% include 'secrets_app/header.html' %}
+<div id="container">
+	<h2>Most Popular Secrets</h2>
+	<a href="/index">Back</a>
+	{% for secret in all_secrets %}
+		<p class="secret">
+			{{secret.secret_text}}  ({{secret.created_at}})  <i>{{secret.num_of_likes}} likes </i> 
+	{% endfor %}
+
+
+</div>
+</body>
+</html>

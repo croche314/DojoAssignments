@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login and Registration</title>
+	{% load staticfiles %}
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet"> 
+	<link rel="stylesheet" type="text/css" href="{% static 'login_and_registration/style.css' %}">
+</head>
+<body>
+	<div id="container">
+		<p>user: {{request.session.user_id}}</p>
+
+
+		<h1>Success! Welcome, {{request.session.user_name}}!</h1>
+
+		<!-- Flash messages -->
+		{% if messages %}
+			{% for message in messages %}
+				<p class="success">{{message}}</p>
+			{% endfor %}
+		{% endif %}
+		<br>
+		<a class="button" href="{% url 'login_reg:' %}">Home</a>
+		<br>
+		<a class="button" href="{% url 'courses:enroll' %}">Enroll Now!</a>
+	</div>
+</body>

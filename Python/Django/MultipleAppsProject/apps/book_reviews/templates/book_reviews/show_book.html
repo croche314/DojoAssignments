@@ -1,0 +1,44 @@
+{% include 'book_reviews/header.html' %}
+
+<div id="container">
+	<nav>
+		<a href="/books">Home</a>&nbsp;&nbsp;&nbsp;
+		<a href="/logout">Logout</a>
+	</nav>
+
+
+	<h2>{{this_book.title}}</h2>
+	Author: {{this_book.author}}
+	<br><br>
+	<div id="reviews_section">
+		<h2>Reviews</h2>
+		{% for review in all_my_reviews %}
+			<hr>
+			Rating: {{review.rating}}<br>
+			<a href="users/{{review.user.id}}">{{review.user.alias}}</a> says: <i>{{review.review_text}}</i>
+			<br>
+			<i>Posted on {{review.created_at}}</i>
+			{% if review.user_id == request.session.user_id %}
+				<a href="reviews/{{review.id}}/delete">Delete</a>
+			{% endif %}
+		{% endfor %}
+	</div>
+
+	<div id="new_review_section">
+	<h3>Add a Review</h3>
+		<form action="/books/add_review/{{this_book.id}}" method="post">
+			{% csrf_token %}
+			<textarea name="review_text"></textarea><br>
+			<label>Rating:</label>
+			<select name="stars">
+				<option value="5">5</option>
+				<option value="4">4</option>
+				<option value="3">3</option>
+				<option value-"2">2</option>
+				<option value="1">1</option>
+		</select> stars
+		<br><br>
+		<input type="submit" value="Submit Review">
+		</form>
+	</div>
+</div>

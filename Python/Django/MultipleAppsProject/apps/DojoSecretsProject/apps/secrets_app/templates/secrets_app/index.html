@@ -1,0 +1,50 @@
+{% include 'secrets_app/header.html' %}
+
+<span class="user_badge">User: {{request.session.user_name}} <a href="/logout">Log out</a></span>
+
+<div id="container">
+	<h2>Hello {{request.session.user_name}}!</h2>
+	{% if messages %}
+		{% for message in messages %}
+			<p class="success">{{message}}</p>
+		{% endfor %}
+	{% endif %}
+	<!-- create secret form -->
+	<form id="secrets_form" action="/create_secret" method="post">
+		{% csrf_token %}
+		<textarea id="txt_secret_text" name="txt_secret_text" placeholder="Your secret here..."></textarea>
+		<br>
+		<input class="button" type="submit" value="Post">
+		<a class="popular_link" href="/popular">Most popular secrets</a>
+	</form>	
+
+	<!-- Recent secrets -->
+	<h2>Recent Secrets...</h2>
+	{% for secret in all_secrets %}
+		<p class="secret">
+			{{secret.secret_text}}  ({{secret.created_at}})  <i>{{secret.num_of_likes}} likes </i> 
+			<!-- If user did not post this secret... -->
+			{% if request.session.user_id != secret.user.id %}
+				<!-- and didn't like it already -->
+				{% for like in all_likes %}
+					{% if like.secret_id == secret.id and like.user_id == request.session.user_id %}
+						<b>You liked this</b>
+					{% elif like.secret_id == secret.id and like.user_id != request.session.user_id %}
+						<a href="/create_like/{{secret.id}}">Like</a>
+					{% endif %}
+				{% endfor %}
+				<!-- Or if the secret has zero likes yet -->
+				{% if secret.num_of_likes == 0 %}
+					<a href="/create_like/{{secret.id}}">Like</a>
+				{% endif %}
+			{% else %}
+				<br>You posted this <a href="/delete/{{secret.id}}">Delete</a>
+			{% endif %}
+		</p>
+	{% endfor %}
+
+
+</div>
+
+</body>
+</html>

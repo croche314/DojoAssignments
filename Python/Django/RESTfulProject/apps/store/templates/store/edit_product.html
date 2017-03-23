@@ -1,0 +1,16 @@
+{% include 'store/header.html' %}
+<div id="container">
+	<form action="/update/{{product.id}}" method="post">
+		{% csrf_token %}
+		<label for="txt_name">Name</label><br>
+		<input type="text" name="txt_name" value="{{product.name}}"><br>
+		<label for="txt_description">Description</label><br>
+		<input type="text" name="txt_description" value="{{product.description}}"><br>
+		<label for="txt_price">Price</label><br>
+		<input type="text" name="txt_price"value="{{product.price}}">
+		<br><br>
+		<input class="button" type="submit" value="Update">
+	</form>
+
+
+</div>
