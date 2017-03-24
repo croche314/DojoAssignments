@@ -1,0 +1,78 @@
+#container {
+	width: 900px;
+	margin: 50px auto;
+	font-family: 'Acme';
+}
+
+.success {
+	color: blue;
+}
+
+.user_badge {
+	font-family: 'Acme';
+}
+
+.button {
+	display: inline-block;
+	font-family: 'Acme';
+	font-size: 15px;
+	background-color: #fff;
+	color: black;
+	border: 2px solid black;
+	box-shadow: 1px 1px 2px black;
+	text-decoration: none;
+	padding: 5px;
+}
+
+.green {
+	color: green;
+}
+
+.author {
+	color: green;
+}
+
+.posted_by {
+	font-size: 80%;
+}
+
+h1,h2 {
+	text-align: center;
+}
+
+#all_quotes {
+	display: inline-block;
+	width: 55%;
+}
+
+.general_quote, .one_quote {
+	text-align: center;
+	font-size: 14px;
+	margin: 10px 0;
+	padding: 10px;
+	border: 2px solid black;
+}
+
+#favorite_quotes {
+	float: right;
+	display: inline-block;
+	width: 40%;
+	vertical-align: top;
+}
+
+#new_quote_form {
+	clear: both;
+	display: block;
+	width: 80%;
+	margin: 25px auto;
+}
+
+#new_quote_form textarea,#new_quote_form input {
+	display: inline-block;
+	width: 100%;
+}
+
+textarea {
+	width: 400px;
+	height: 100px;
+}

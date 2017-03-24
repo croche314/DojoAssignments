@@ -1,0 +1,60 @@
+{% include 'quotes/header.html' %}
+	<div id="container">
+		<a href="{% url 'quotes:logout' %}">Logout</a>
+		<h1>Welcome {{request.session.alias}}!</h1>
+
+		<div id="all_quotes">
+			<h2>Quotable Quotes</h2>
+			{% for quote in all_quotes %}
+				{% if quote.id in favorites_list %}
+					<!-- Already a favorite -->
+				{% else %}
+					<div class="general_quote">
+						<span class="author">{{quote.author}}</span>:
+						&nbsp;{{quote.message}}
+						<br><br>
+						<i class="posted_by">Posted by <a href="{% url 'quotes:show_user' user_id=quote.posted_by.id %}"> {{quote.posted_by.alias}}</a></i>
+						<br>
+						<a class="button" href="{% url 'quotes:add_to_favorites' quote_id=quote.id %}">Add to My Favorites</a>
+					</div>
+				{% endif %}		
+				
+			{% endfor %}
+		</div> <!-- #all_quotes -->
+
+		<div id="favorite_quotes">
+			
+			<h2>Your Favorites</h2>
+			{% for quote in my_favorite_quotes %}
+				<div class="one_quote">
+					<span class="author">{{quote.author}}</span>:
+					{{quote.message}}
+					<br><br>
+					<i>Posted by <a href="{% url 'quotes:show_user' user_id=quote.posted_by.id %}"> {{quote.posted_by.alias}}</a></i>
+					<br>
+					<a class="button" href="{% url 'quotes:remove_from_favorites' quote_id=quote.id %}">Remove from My Favorites</a>
+					
+				</div>
+			{% endfor %}
+			<div class="favorite_quote">
+				
+			</div>
+		</div> <!-- #favorite_quotes -->
+
+		<!-- Contribute a Quote -->
+		<div id="new_quote_form">
+			<form action="{% url 'quotes:create_quote' %}" method="post">
+				{% csrf_token %}
+				<h2>Contribute a Quote</h2>
+				<label>Quoted By:</label><input type="text" name="txt_author"><br>
+				<label>Message:</label><textarea name="txt_message"></textarea><br>
+				<br>
+				<input class="button" type="submit" value="Submit">
+
+			</form>
+		</div>
+	</div> <!-- #container -->
+
+
+</body>
+</html>

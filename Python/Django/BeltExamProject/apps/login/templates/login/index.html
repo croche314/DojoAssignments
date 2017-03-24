@@ -1,0 +1,51 @@
+{% include 'login/header.html' %}
+	<div id="container">
+		<!-- Register form -->
+		<form id="register_form" action="{% url 'login:create_user' %}" method="post">
+			{% csrf_token %}
+			<fieldset>
+				<legend>Register</legend>
+				<table>
+					<tr>
+						<td>Name:</td><td><input type="text" name="txt_name" >*</td>
+					</tr>
+					<tr>
+						<td>Alias:</td><td><input type="text" name="txt_alias">*</td>
+					</tr>
+					<tr>
+						<td>E-mail:</td><td><input type="text" name="txt_email" >*</td>
+					</tr>
+					<tr>
+						<td>Date of Birth:</td><td><input type="text" name="txt_date_of_birth" >*</td>
+					</tr>
+					<tr>
+						<td>Password:</td><td><input type="password" name="txt_password" >*</td>
+					</tr>
+					<tr>
+						<td>Confirm password:</td><td><input type="password" name="txt_confirm_password" >*</td>
+					</tr>
+				</table>
+				<input class="button" type="submit" value="Register">
+			</fieldset>
+		</form>
+
+			<!-- Login form -->
+			<form id="login_form" action="{% url 'login:login_user' %}" method="post">
+				{% csrf_token %}
+				<fieldset>
+					<legend>Log In</legend>
+					<table>
+						<tr>
+							<td>E-mail:</td><td><input type="text" name="txt_email">*</td>
+						</tr>
+						<tr>
+							<td>Password:</td><td><input type="password" name="txt_password">*</td>
+						</tr>
+					</table>
+					<input class="button" type="submit" value="Log In">
+				</fieldset>
+			</form>
+	</div>
+
+</body>
+</html>

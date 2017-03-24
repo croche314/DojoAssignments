@@ -1,0 +1,20 @@
+{% include 'quotes/header.html' %}
+	<div id="container">
+		<nav>
+			<a href="{% url 'quotes:index' %}">Dashboard</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a href="{% url 'quotes:logout' %}">Logout</a>
+		</nav>
+
+		<h3>Posts by {{this_user.alias}}</h3>
+		<h3>Count: {{this_user.quote_count}}</h3>
+
+		{% for quote in my_quotes %}
+			<p>
+				<span class="green">{{quote.author}}</span>:
+				{{quote.message}}
+			</p>
+		{% endfor %}
+	</div>
+
+</body>
+</html>
