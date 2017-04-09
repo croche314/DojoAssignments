@@ -4,53 +4,7 @@ from .models import User, Book, Review
 import bcrypt, re
 from django.core.urlresolvers import reverse
 
-
 # Create your views here.
-def start(request):
-	return render(request, 'book_reviews/login.html')
-
-def register(request):
-	name = request.POST['txt_name']
-	alias = request.POST['txt_alias']
-	email = request.POST['txt_email']
-	password = request.POST['txt_password']
-	confirm_pw = request.POST['txt_confirm_pw']
-
-	if len(name)<1 or len(alias)<1 or len(email)<1 or len(password)<1 or len(confirm_pw)<1:
-		messages.warning(request,'Please make sure all fields are not blank')
-		return redirect('/')
-	elif password != confirm_pw:
-		messages.warning(request,'passwords must match')
-		return redirect('/')
-	else:
-		new_user = User.objects.create(name=name,alias=alias,email=email,password=password)
-		request.session['user_id'] = new_user.id
-		request.session['alias'] = new_user.alias
-		request.session['email'] = new_user.email
-		messages.success(request,'New user created! Welcome!')
-		return redirect('/books')
-
-
-def login(request):
-	email = request.POST['txt_email']
-	password = request.POST['txt_password']
-
-	this_user = User.objects.get(email=email)
-	if this_user.password == password:
-		request.session['user_id'] = this_user.id
-		request.session['alias'] = this_user.alias
-		request.session['email'] = this_user.email
-		return redirect('/books')
-	else:
-		messages.warning(request,'invalid login')
-		return redirect('/')
-
-def logout(request):
-	request.session.flush()
-	messages.success(request,'Logged out successfully')
-	return redirect('/')
-
-
 def index(request):
 	all_books = Book.objects.all()
 	all_reviews = Review.objects.all()
@@ -99,7 +53,7 @@ def create_book(request):
 		new_review = Review.objects.create(user=this_user,book=new_book,rating=rating,review_text=review_text)
 	
 	messages.success(request,'New Book and Review Added!')
-	return redirect('/books')
+	return redirect('books:')
 
 def show_book(request, book_id):
 	this_book = Book.objects.get(id=book_id)

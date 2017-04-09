@@ -9,3 +9,6 @@ class Product(models.Model):
 	price = models.FloatField()
 	created_at = models.DateTimeField(auto_now_add=True)
 	updated_at = models.DateTimeField(auto_now=True)
+
+class ExampleModel(models.Model):
+    model_pic = models.ImageField(upload_to = 'pic_folder/', default = 'pic_folder/None/no-img.jpg')

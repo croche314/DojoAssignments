@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Survey Form</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<h1>Survey Form</h1>
+	<!-- Register form -->
+	<form id="register_form" action="/result" method="post">
+		<fieldset>
+			<legend>Register</legend>
+			<table>
+				<tr>
+					<td>Your Name:</td><td><input type="text" name="txt_name">*</td>
+				</tr>
+				<tr>
+					<td>Dojo Location</td><td><input type="text" name="txt_location">*</td>
+				</tr>
+				<tr>
+					<td>Favorite Language:</td><td><input type="text" name="txt_language">*</td>
+				</tr>
+				<tr>
+					<td colspan="2">Comment (optional):<br>
+					<textarea name='comment'></textarea>
+					</td>
+				</tr>
+				
+			</table>
+			<input class="button" type="submit" value="Register">
+		</fieldset>
+	</form>
+</body>
+</html>

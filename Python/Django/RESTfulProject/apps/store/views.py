@@ -1,7 +1,16 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 from django.contrib import messages
-from .models import Product
+from .models import Product,ExampleModel
 
+from .forms import ImageUploadForm
+
+
+def upload_pic(request):
+    if request.method == 'POST':
+        form = ImageUploadForm(request.POST, request.FILES)
+        
+    return HttpResponse('image upload success')
+    
 # Create your views here.
 def index(request):
 	query = Product.objects.all()

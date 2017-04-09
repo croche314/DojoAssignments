@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Index</title>
+</head>
+<body>
+	<h1>Hello</h1>
+	<form action="/users" method="post">
+		<h2>Name:</h2>
+		<input type="text" name="name">
+		<h2>Age:</h2>
+		<input type="text" name="age">
+		<br>
+		<input type="submit" value="Submit">
+	</form>
+
+	<h2>current users:</h2>
+	<% for (var i = 0; i < users.length; i++) { -%>
+		<p>
+			Name: <%= users[i].name %>
+			<br>
+			Age: <%= users[i].age %>
+		</p>
+	<% } -%>
+</body>
+</html>

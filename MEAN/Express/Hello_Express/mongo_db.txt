@@ -1,0 +1,1316 @@
+Last login: Thu Apr  6 07:47:51 on ttys000
+Chriss-MacBook-Pro:data croche314$ mongo
+MongoDB shell version v3.4.3
+connecting to: mongodb://127.0.0.1:27017
+MongoDB server version: 3.4.3
+Welcome to the MongoDB shell.
+For interactive help, type "help".
+For more comprehensive documentation, see
+	http://docs.mongodb.org/
+Questions? Try the support group
+	http://groups.google.com/group/mongodb-user
+Server has startup warnings: 
+2017-04-06T11:20:25.251-0500 I CONTROL  [initandlisten] 
+2017-04-06T11:20:25.251-0500 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2017-04-06T11:20:25.251-0500 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2017-04-06T11:20:25.251-0500 I CONTROL  [initandlisten] ** WARNING: You are running this process as the root user, which is not recommended.
+2017-04-06T11:20:25.251-0500 I CONTROL  [initandlisten] 
+2017-04-06T11:20:25.251-0500 I CONTROL  [initandlisten] 
+2017-04-06T11:20:25.251-0500 I CONTROL  [initandlisten] ** WARNING: soft rlimits too low. Number of files is 256, should be at least 1000
+> show dbs
+admin  0.000GB
+local  0.000GB
+> use test_app
+switched to db test_app
+> show dbs
+admin  0.000GB
+local  0.000GB
+> db.createCollection('users')
+{ "ok" : 1 }
+> db.users.drop()
+true
+> db.createCollection('users')
+{ "ok" : 1 }
+> show collections
+users
+> db.users.insert({name:"Trey" })
+WriteResult({ "nInserted" : 1 })
+> db
+test_app
+> db.drop()
+2017-04-06T12:39:49.344-0500 E QUERY    [thread1] TypeError: db.drop is not a function :
+@(shell):1:1
+> db.test_app.drop()
+false
+> db.dropDatabase()
+{ "dropped" : "test_app", "ok" : 1 }
+> show dbs
+admin  0.000GB
+local  0.000GB
+> use my_first_db
+switched to db my_first_db
+> db
+my_first_db
+> db.createCollection('students')
+{ "ok" : 1 }
+> db.students.insert({name:'Chris',home_state:'Illinois',lucky_number:6,birthday:{month:3,day:14,year:1985}})
+WriteResult({ "nInserted" : 1 })
+> db.students.find({}).pretty()
+{
+	"_id" : ObjectId("58e67e7333d07e54cb23e764"),
+	"name" : "Chris",
+	"home_state" : "Illinois",
+	"lucky_number" : 6,
+	"birthday" : {
+		"month" : 3,
+		"day" : 14,
+		"year" : 1985
+	}
+}
+> db.students.insert({name:'Sean',home_state:'California',lucky_number:13,birthday{month:1,day:24,year:1971 } })
+2017-04-06T12:46:00.551-0500 E QUERY    [thread1] SyntaxError: missing : after property id @(shell):1:80
+> db.students.insert({name:'Sean',home_state:'California',lucky_number:13,birthday{month:1,day:24,year:1971 }})
+2017-04-06T12:46:17.238-0500 E QUERY    [thread1] SyntaxError: missing : after property id @(shell):1:80
+> db.students.insert({name:'Sean',home_state:'California',lucky_number:13,birthday:{month:1,day:24,year:1971 } })
+WriteResult({ "nInserted" : 1 })
+> db.students.find({}).pretty()
+{
+	"_id" : ObjectId("58e67e7333d07e54cb23e764"),
+	"name" : "Chris",
+	"home_state" : "Illinois",
+	"lucky_number" : 6,
+	"birthday" : {
+		"month" : 3,
+		"day" : 14,
+		"year" : 1985
+	}
+}
+{
+	"_id" : ObjectId("58e67f0333d07e54cb23e765"),
+	"name" : "Sean",
+	"home_state" : "California",
+	"lucky_number" : 13,
+	"birthday" : {
+		"month" : 1,
+		"day" : 24,
+		"year" : 1971
+	}
+}
+> db.students.insert({name:'Sandra',home_state:'Alaska',lucky_number:7,birthday:{month:6,day:6,year:1990} })
+WriteResult({ "nInserted" : 1 })
+> db.students.insert({name:'Kim',home_state:'Mississippi',lucky_number:7,birthday:{month:12,day:25,year:1980},personality:'bitch'})
+WriteResult({ "nInserted" : 1 })
+> db.students.insert({name:'Pat',home_state:'Nebraska',lucky_number:21,birthday:{month:2,day:30,year:1900},personality:'a-hole'})
+WriteResult({ "nInserted" : 1 })
+> db.students.find({})
+{ "_id" : ObjectId("58e67e7333d07e54cb23e764"), "name" : "Chris", "home_state" : "Illinois", "lucky_number" : 6, "birthday" : { "month" : 3, "day" : 14, "year" : 1985 } }
+{ "_id" : ObjectId("58e67f0333d07e54cb23e765"), "name" : "Sean", "home_state" : "California", "lucky_number" : 13, "birthday" : { "month" : 1, "day" : 24, "year" : 1971 } }
+{ "_id" : ObjectId("58e67f8933d07e54cb23e766"), "name" : "Sandra", "home_state" : "Alaska", "lucky_number" : 7, "birthday" : { "month" : 6, "day" : 6, "year" : 1990 } }
+{ "_id" : ObjectId("58e67ff333d07e54cb23e767"), "name" : "Kim", "home_state" : "Mississippi", "lucky_number" : 7, "birthday" : { "month" : 12, "day" : 25, "year" : 1980 }, "personality" : "bitch" }
+{ "_id" : ObjectId("58e6805533d07e54cb23e768"), "name" : "Pat", "home_state" : "Nebraska", "lucky_number" : 21, "birthday" : { "month" : 2, "day" : 30, "year" : 1900 }, "personality" : "a-hole" }
+> db.students.find({}).pretty()
+{
+	"_id" : ObjectId("58e67e7333d07e54cb23e764"),
+	"name" : "Chris",
+	"home_state" : "Illinois",
+	"lucky_number" : 6,
+	"birthday" : {
+		"month" : 3,
+		"day" : 14,
+		"year" : 1985
+	}
+}
+{
+	"_id" : ObjectId("58e67f0333d07e54cb23e765"),
+	"name" : "Sean",
+	"home_state" : "California",
+	"lucky_number" : 13,
+	"birthday" : {
+		"month" : 1,
+		"day" : 24,
+		"year" : 1971
+	}
+}
+{
+	"_id" : ObjectId("58e67f8933d07e54cb23e766"),
+	"name" : "Sandra",
+	"home_state" : "Alaska",
+	"lucky_number" : 7,
+	"birthday" : {
+		"month" : 6,
+		"day" : 6,
+		"year" : 1990
+	}
+}
+{
+	"_id" : ObjectId("58e67ff333d07e54cb23e767"),
+	"name" : "Kim",
+	"home_state" : "Mississippi",
+	"lucky_number" : 7,
+	"birthday" : {
+		"month" : 12,
+		"day" : 25,
+		"year" : 1980
+	},
+	"personality" : "bitch"
+}
+{
+	"_id" : ObjectId("58e6805533d07e54cb23e768"),
+	"name" : "Pat",
+	"home_state" : "Nebraska",
+	"lucky_number" : 21,
+	"birthday" : {
+		"month" : 2,
+		"day" : 30,
+		"year" : 1900
+	},
+	"personality" : "a-hole"
+}
+> db.students.find({home_state:'California'})
+{ "_id" : ObjectId("58e67f0333d07e54cb23e765"), "name" : "Sean", "home_state" : "California", "lucky_number" : 13, "birthday" : { "month" : 1, "day" : 24, "year" : 1971 } }
+> db.students.find({home_state:'California'}).pretty()
+{
+	"_id" : ObjectId("58e67f0333d07e54cb23e765"),
+	"name" : "Sean",
+	"home_state" : "California",
+	"lucky_number" : 13,
+	"birthday" : {
+		"month" : 1,
+		"day" : 24,
+		"year" : 1971
+	}
+}
+> db.students.find({lucky_number:{$gt:3}}).pretty()
+{
+	"_id" : ObjectId("58e67e7333d07e54cb23e764"),
+	"name" : "Chris",
+	"home_state" : "Illinois",
+	"lucky_number" : 6,
+	"birthday" : {
+		"month" : 3,
+		"day" : 14,
+		"year" : 1985
+	}
+}
+{
+	"_id" : ObjectId("58e67f0333d07e54cb23e765"),
+	"name" : "Sean",
+	"home_state" : "California",
+	"lucky_number" : 13,
+	"birthday" : {
+		"month" : 1,
+		"day" : 24,
+		"year" : 1971
+	}
+}
+{
+	"_id" : ObjectId("58e67f8933d07e54cb23e766"),
+	"name" : "Sandra",
+	"home_state" : "Alaska",
+	"lucky_number" : 7,
+	"birthday" : {
+		"month" : 6,
+		"day" : 6,
+		"year" : 1990
+	}
+}
+{
+	"_id" : ObjectId("58e67ff333d07e54cb23e767"),
+	"name" : "Kim",
+	"home_state" : "Mississippi",
+	"lucky_number" : 7,
+	"birthday" : {
+		"month" : 12,
+		"day" : 25,
+		"year" : 1980
+	},
+	"personality" : "bitch"
+}
+{
+	"_id" : ObjectId("58e6805533d07e54cb23e768"),
+	"name" : "Pat",
+	"home_state" : "Nebraska",
+	"lucky_number" : 21,
+	"birthday" : {
+		"month" : 2,
+		"day" : 30,
+		"year" : 1900
+	},
+	"personality" : "a-hole"
+}
+> db.students.find({lucky_number:{$gte:10}}).pretty()
+{
+	"_id" : ObjectId("58e67f0333d07e54cb23e765"),
+	"name" : "Sean",
+	"home_state" : "California",
+	"lucky_number" : 13,
+	"birthday" : {
+		"month" : 1,
+		"day" : 24,
+		"year" : 1971
+	}
+}
+{
+	"_id" : ObjectId("58e6805533d07e54cb23e768"),
+	"name" : "Pat",
+	"home_state" : "Nebraska",
+	"lucky_number" : 21,
+	"birthday" : {
+		"month" : 2,
+		"day" : 30,
+		"year" : 1900
+	},
+	"personality" : "a-hole"
+}
+> db.students.find({lucky_number:{$and:[{lucky_number:{$gte:1}},{lucky_number:{$lte:9}}]}})
+Error: error: {
+	"ok" : 0,
+	"errmsg" : "unknown operator: $and",
+	"code" : 2,
+	"codeName" : "BadValue"
+}
+> db.students.find({lucky_number:{$and:[{lucky_number:{$gte:1}},{lucky_number:{$lte:9}}]}})
+Error: error: {
+	"ok" : 0,
+	"errmsg" : "unknown operator: $and",
+	"code" : 2,
+	"codeName" : "BadValue"
+}
+> db.students.find({$and:[{lucky_number:{$gte:1}},{lucky_number:{$lte:9}}]}).pretty()
+{
+	"_id" : ObjectId("58e67e7333d07e54cb23e764"),
+	"name" : "Chris",
+	"home_state" : "Illinois",
+	"lucky_number" : 6,
+	"birthday" : {
+		"month" : 3,
+		"day" : 14,
+		"year" : 1985
+	}
+}
+{
+	"_id" : ObjectId("58e67f8933d07e54cb23e766"),
+	"name" : "Sandra",
+	"home_state" : "Alaska",
+	"lucky_number" : 7,
+	"birthday" : {
+		"month" : 6,
+		"day" : 6,
+		"year" : 1990
+	}
+}
+{
+	"_id" : ObjectId("58e67ff333d07e54cb23e767"),
+	"name" : "Kim",
+	"home_state" : "Mississippi",
+	"lucky_number" : 7,
+	"birthday" : {
+		"month" : 12,
+		"day" : 25,
+		"year" : 1980
+	},
+	"personality" : "bitch"
+}
+> db.students.update({},{$set:{interests:['coding','brunch','MongoDB']}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.students.find({}).pretty()
+{
+	"_id" : ObjectId("58e67e7333d07e54cb23e764"),
+	"name" : "Chris",
+	"home_state" : "Illinois",
+	"lucky_number" : 6,
+	"birthday" : {
+		"month" : 3,
+		"day" : 14,
+		"year" : 1985
+	},
+	"interests" : [
+		"coding",
+		"brunch",
+		"MongoDB"
+	]
+}
+{
+	"_id" : ObjectId("58e67f0333d07e54cb23e765"),
+	"name" : "Sean",
+	"home_state" : "California",
+	"lucky_number" : 13,
+	"birthday" : {
+		"month" : 1,
+		"day" : 24,
+		"year" : 1971
+	}
+}
+{
+	"_id" : ObjectId("58e67f8933d07e54cb23e766"),
+	"name" : "Sandra",
+	"home_state" : "Alaska",
+	"lucky_number" : 7,
+	"birthday" : {
+		"month" : 6,
+		"day" : 6,
+		"year" : 1990
+	}
+}
+{
+	"_id" : ObjectId("58e67ff333d07e54cb23e767"),
+	"name" : "Kim",
+	"home_state" : "Mississippi",
+	"lucky_number" : 7,
+	"birthday" : {
+		"month" : 12,
+		"day" : 25,
+		"year" : 1980
+	},
+	"personality" : "bitch"
+}
+{
+	"_id" : ObjectId("58e6805533d07e54cb23e768"),
+	"name" : "Pat",
+	"home_state" : "Nebraska",
+	"lucky_number" : 21,
+	"birthday" : {
+		"month" : 2,
+		"day" : 30,
+		"year" : 1900
+	},
+	"personality" : "a-hole"
+}
+> db.students.update({},{$set:{interests:['coding','brunch','MongoDB']}},true)
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 0 })
+> db.students.find({}).pretty()
+{
+	"_id" : ObjectId("58e67e7333d07e54cb23e764"),
+	"name" : "Chris",
+	"home_state" : "Illinois",
+	"lucky_number" : 6,
+	"birthday" : {
+		"month" : 3,
+		"day" : 14,
+		"year" : 1985
+	},
+	"interests" : [
+		"coding",
+		"brunch",
+		"MongoDB"
+	]
+}
+{
+	"_id" : ObjectId("58e67f0333d07e54cb23e765"),
+	"name" : "Sean",
+	"home_state" : "California",
+	"lucky_number" : 13,
+	"birthday" : {
+		"month" : 1,
+		"day" : 24,
+		"year" : 1971
+	}
+}
+{
+	"_id" : ObjectId("58e67f8933d07e54cb23e766"),
+	"name" : "Sandra",
+	"home_state" : "Alaska",
+	"lucky_number" : 7,
+	"birthday" : {
+		"month" : 6,
+		"day" : 6,
+		"year" : 1990
+	}
+}
+{
+	"_id" : ObjectId("58e67ff333d07e54cb23e767"),
+	"name" : "Kim",
+	"home_state" : "Mississippi",
+	"lucky_number" : 7,
+	"birthday" : {
+		"month" : 12,
+		"day" : 25,
+		"year" : 1980
+	},
+	"personality" : "bitch"
+}
+{
+	"_id" : ObjectId("58e6805533d07e54cb23e768"),
+	"name" : "Pat",
+	"home_state" : "Nebraska",
+	"lucky_number" : 21,
+	"birthday" : {
+		"month" : 2,
+		"day" : 30,
+		"year" : 1900
+	},
+	"personality" : "a-hole"
+}
+> db.students.update({},{$addToSet:{interests:['coding','brunch','MongoDB']}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.students.update({lucky_number:{$gt:0}},{$set: {interests:['coding','brunch','MongoDB']}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.students.find().pretty()
+{
+	"_id" : ObjectId("58e67e7333d07e54cb23e764"),
+	"name" : "Chris",
+	"home_state" : "Illinois",
+	"lucky_number" : 6,
+	"birthday" : {
+		"month" : 3,
+		"day" : 14,
+		"year" : 1985
+	},
+	"interests" : [
+		"coding",
+		"brunch",
+		"MongoDB"
+	]
+}
+{
+	"_id" : ObjectId("58e67f0333d07e54cb23e765"),
+	"name" : "Sean",
+	"home_state" : "California",
+	"lucky_number" : 13,
+	"birthday" : {
+		"month" : 1,
+		"day" : 24,
+		"year" : 1971
+	}
+}
+{
+	"_id" : ObjectId("58e67f8933d07e54cb23e766"),
+	"name" : "Sandra",
+	"home_state" : "Alaska",
+	"lucky_number" : 7,
+	"birthday" : {
+		"month" : 6,
+		"day" : 6,
+		"year" : 1990
+	}
+}
+{
+	"_id" : ObjectId("58e67ff333d07e54cb23e767"),
+	"name" : "Kim",
+	"home_state" : "Mississippi",
+	"lucky_number" : 7,
+	"birthday" : {
+		"month" : 12,
+		"day" : 25,
+		"year" : 1980
+	},
+	"personality" : "bitch"
+}
+{
+	"_id" : ObjectId("58e6805533d07e54cb23e768"),
+	"name" : "Pat",
+	"home_state" : "Nebraska",
+	"lucky_number" : 21,
+	"birthday" : {
+		"month" : 2,
+		"day" : 30,
+		"year" : 1900
+	},
+	"personality" : "a-hole"
+}
+> db.students.updateMany({},{$set: {interests:['coding','brunch','MongoDB']}})
+{ "acknowledged" : true, "matchedCount" : 5, "modifiedCount" : 4 }
+> db.students.find().pretty()
+{
+	"_id" : ObjectId("58e67e7333d07e54cb23e764"),
+	"name" : "Chris",
+	"home_state" : "Illinois",
+	"lucky_number" : 6,
+	"birthday" : {
+		"month" : 3,
+		"day" : 14,
+		"year" : 1985
+	},
+	"interests" : [
+		"coding",
+		"brunch",
+		"MongoDB"
+	]
+}
+{
+	"_id" : ObjectId("58e67f0333d07e54cb23e765"),
+	"name" : "Sean",
+	"home_state" : "California",
+	"lucky_number" : 13,
+	"birthday" : {
+		"month" : 1,
+		"day" : 24,
+		"year" : 1971
+	},
+	"interests" : [
+		"coding",
+		"brunch",
+		"MongoDB"
+	]
+}
+{
+	"_id" : ObjectId("58e67f8933d07e54cb23e766"),
+	"name" : "Sandra",
+	"home_state" : "Alaska",
+	"lucky_number" : 7,
+	"birthday" : {
+		"month" : 6,
+		"day" : 6,
+		"year" : 1990
+	},
+	"interests" : [
+		"coding",
+		"brunch",
+		"MongoDB"
+	]
+}
+{
+	"_id" : ObjectId("58e67ff333d07e54cb23e767"),
+	"name" : "Kim",
+	"home_state" : "Mississippi",
+	"lucky_number" : 7,
+	"birthday" : {
+		"month" : 12,
+		"day" : 25,
+		"year" : 1980
+	},
+	"personality" : "bitch",
+	"interests" : [
+		"coding",
+		"brunch",
+		"MongoDB"
+	]
+}
+{
+	"_id" : ObjectId("58e6805533d07e54cb23e768"),
+	"name" : "Pat",
+	"home_state" : "Nebraska",
+	"lucky_number" : 21,
+	"birthday" : {
+		"month" : 2,
+		"day" : 30,
+		"year" : 1900
+	},
+	"personality" : "a-hole",
+	"interests" : [
+		"coding",
+		"brunch",
+		"MongoDB"
+	]
+}
+> db.students.update({name:'Chris},{$push:{interests:'smoking'}})
+2017-04-06T13:40:46.816-0500 E QUERY    [thread1] SyntaxError: missing } after property list @(shell):1:52
+> db.students.update({name:'Chris'},{$push:{interests:'smoking'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.students.find().pretty()
+{
+	"_id" : ObjectId("58e67e7333d07e54cb23e764"),
+	"name" : "Chris",
+	"home_state" : "Illinois",
+	"lucky_number" : 6,
+	"birthday" : {
+		"month" : 3,
+		"day" : 14,
+		"year" : 1985
+	},
+	"interests" : [
+		"coding",
+		"brunch",
+		"MongoDB",
+		"smoking"
+	]
+}
+{
+	"_id" : ObjectId("58e67f0333d07e54cb23e765"),
+	"name" : "Sean",
+	"home_state" : "California",
+	"lucky_number" : 13,
+	"birthday" : {
+		"month" : 1,
+		"day" : 24,
+		"year" : 1971
+	},
+	"interests" : [
+		"coding",
+		"brunch",
+		"MongoDB"
+	]
+}
+{
+	"_id" : ObjectId("58e67f8933d07e54cb23e766"),
+	"name" : "Sandra",
+	"home_state" : "Alaska",
+	"lucky_number" : 7,
+	"birthday" : {
+		"month" : 6,
+		"day" : 6,
+		"year" : 1990
+	},
+	"interests" : [
+		"coding",
+		"brunch",
+		"MongoDB"
+	]
+}
+{
+	"_id" : ObjectId("58e67ff333d07e54cb23e767"),
+	"name" : "Kim",
+	"home_state" : "Mississippi",
+	"lucky_number" : 7,
+	"birthday" : {
+		"month" : 12,
+		"day" : 25,
+		"year" : 1980
+	},
+	"personality" : "bitch",
+	"interests" : [
+		"coding",
+		"brunch",
+		"MongoDB"
+	]
+}
+{
+	"_id" : ObjectId("58e6805533d07e54cb23e768"),
+	"name" : "Pat",
+	"home_state" : "Nebraska",
+	"lucky_number" : 21,
+	"birthday" : {
+		"month" : 2,
+		"day" : 30,
+		"year" : 1900
+	},
+	"personality" : "a-hole",
+	"interests" : [
+		"coding",
+		"brunch",
+		"MongoDB"
+	]
+}
+> db.students.update({name:'Pat'},{$push:{interests:'taxes'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.students.find().pretty()
+{
+	"_id" : ObjectId("58e67e7333d07e54cb23e764"),
+	"name" : "Chris",
+	"home_state" : "Illinois",
+	"lucky_number" : 6,
+	"birthday" : {
+		"month" : 3,
+		"day" : 14,
+		"year" : 1985
+	},
+	"interests" : [
+		"coding",
+		"brunch",
+		"MongoDB",
+		"smoking"
+	]
+}
+{
+	"_id" : ObjectId("58e67f0333d07e54cb23e765"),
+	"name" : "Sean",
+	"home_state" : "California",
+	"lucky_number" : 13,
+	"birthday" : {
+		"month" : 1,
+		"day" : 24,
+		"year" : 1971
+	},
+	"interests" : [
+		"coding",
+		"brunch",
+		"MongoDB"
+	]
+}
+{
+	"_id" : ObjectId("58e67f8933d07e54cb23e766"),
+	"name" : "Sandra",
+	"home_state" : "Alaska",
+	"lucky_number" : 7,
+	"birthday" : {
+		"month" : 6,
+		"day" : 6,
+		"year" : 1990
+	},
+	"interests" : [
+		"coding",
+		"brunch",
+		"MongoDB"
+	]
+}
+{
+	"_id" : ObjectId("58e67ff333d07e54cb23e767"),
+	"name" : "Kim",
+	"home_state" : "Mississippi",
+	"lucky_number" : 7,
+	"birthday" : {
+		"month" : 12,
+		"day" : 25,
+		"year" : 1980
+	},
+	"personality" : "bitch",
+	"interests" : [
+		"coding",
+		"brunch",
+		"MongoDB"
+	]
+}
+{
+	"_id" : ObjectId("58e6805533d07e54cb23e768"),
+	"name" : "Pat",
+	"home_state" : "Nebraska",
+	"lucky_number" : 21,
+	"birthday" : {
+		"month" : 2,
+		"day" : 30,
+		"year" : 1900
+	},
+	"personality" : "a-hole",
+	"interests" : [
+		"coding",
+		"brunch",
+		"MongoDB",
+		"taxes"
+	]
+}
+> db.students.update({name:'Pat'},{$pop:{interests:'taxes'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.students.find().pretty()
+{
+	"_id" : ObjectId("58e67e7333d07e54cb23e764"),
+	"name" : "Chris",
+	"home_state" : "Illinois",
+	"lucky_number" : 6,
+	"birthday" : {
+		"month" : 3,
+		"day" : 14,
+		"year" : 1985
+	},
+	"interests" : [
+		"coding",
+		"brunch",
+		"MongoDB",
+		"smoking"
+	]
+}
+{
+	"_id" : ObjectId("58e67f0333d07e54cb23e765"),
+	"name" : "Sean",
+	"home_state" : "California",
+	"lucky_number" : 13,
+	"birthday" : {
+		"month" : 1,
+		"day" : 24,
+		"year" : 1971
+	},
+	"interests" : [
+		"coding",
+		"brunch",
+		"MongoDB"
+	]
+}
+{
+	"_id" : ObjectId("58e67f8933d07e54cb23e766"),
+	"name" : "Sandra",
+	"home_state" : "Alaska",
+	"lucky_number" : 7,
+	"birthday" : {
+		"month" : 6,
+		"day" : 6,
+		"year" : 1990
+	},
+	"interests" : [
+		"coding",
+		"brunch",
+		"MongoDB"
+	]
+}
+{
+	"_id" : ObjectId("58e67ff333d07e54cb23e767"),
+	"name" : "Kim",
+	"home_state" : "Mississippi",
+	"lucky_number" : 7,
+	"birthday" : {
+		"month" : 12,
+		"day" : 25,
+		"year" : 1980
+	},
+	"personality" : "bitch",
+	"interests" : [
+		"coding",
+		"brunch",
+		"MongoDB"
+	]
+}
+{
+	"_id" : ObjectId("58e6805533d07e54cb23e768"),
+	"name" : "Pat",
+	"home_state" : "Nebraska",
+	"lucky_number" : 21,
+	"birthday" : {
+		"month" : 2,
+		"day" : 30,
+		"year" : 1900
+	},
+	"personality" : "a-hole",
+	"interests" : [
+		"coding",
+		"brunch",
+		"MongoDB"
+	]
+}
+> db.students.remove({home_state:'California'})
+WriteResult({ "nRemoved" : 1 })
+> db.students.find().pretty()
+{
+	"_id" : ObjectId("58e67e7333d07e54cb23e764"),
+	"name" : "Chris",
+	"home_state" : "Illinois",
+	"lucky_number" : 6,
+	"birthday" : {
+		"month" : 3,
+		"day" : 14,
+		"year" : 1985
+	},
+	"interests" : [
+		"coding",
+		"brunch",
+		"MongoDB",
+		"smoking"
+	]
+}
+{
+	"_id" : ObjectId("58e67f8933d07e54cb23e766"),
+	"name" : "Sandra",
+	"home_state" : "Alaska",
+	"lucky_number" : 7,
+	"birthday" : {
+		"month" : 6,
+		"day" : 6,
+		"year" : 1990
+	},
+	"interests" : [
+		"coding",
+		"brunch",
+		"MongoDB"
+	]
+}
+{
+	"_id" : ObjectId("58e67ff333d07e54cb23e767"),
+	"name" : "Kim",
+	"home_state" : "Mississippi",
+	"lucky_number" : 7,
+	"birthday" : {
+		"month" : 12,
+		"day" : 25,
+		"year" : 1980
+	},
+	"personality" : "bitch",
+	"interests" : [
+		"coding",
+		"brunch",
+		"MongoDB"
+	]
+}
+{
+	"_id" : ObjectId("58e6805533d07e54cb23e768"),
+	"name" : "Pat",
+	"home_state" : "Nebraska",
+	"lucky_number" : 21,
+	"birthday" : {
+		"month" : 2,
+		"day" : 30,
+		"year" : 1900
+	},
+	"personality" : "a-hole",
+	"interests" : [
+		"coding",
+		"brunch",
+		"MongoDB"
+	]
+}
+> db.students.remove({name:'Kim'})
+WriteResult({ "nRemoved" : 1 })
+> db.students.remove({lucky_number:{$gt:5}},true)
+WriteResult({ "nRemoved" : 1 })
+> db.students.find().pretty()
+{
+	"_id" : ObjectId("58e67f8933d07e54cb23e766"),
+	"name" : "Sandra",
+	"home_state" : "Alaska",
+	"lucky_number" : 7,
+	"birthday" : {
+		"month" : 6,
+		"day" : 6,
+		"year" : 1990
+	},
+	"interests" : [
+		"coding",
+		"brunch",
+		"MongoDB"
+	]
+}
+{
+	"_id" : ObjectId("58e6805533d07e54cb23e768"),
+	"name" : "Pat",
+	"home_state" : "Nebraska",
+	"lucky_number" : 21,
+	"birthday" : {
+		"month" : 2,
+		"day" : 30,
+		"year" : 1900
+	},
+	"personality" : "a-hole",
+	"interests" : [
+		"coding",
+		"brunch",
+		"MongoDB"
+	]
+}
+> db.students.updateMany({},{number_of_belts:0})
+2017-04-06T13:53:19.717-0500 E QUERY    [thread1] Error: the update operation document must contain atomic operators :
+DBCollection.prototype.updateMany@src/mongo/shell/crud_api.js:601:1
+@(shell):1:1
+> db.students.updateMany({},{$set:{number_of_belts:0}})
+{ "acknowledged" : true, "matchedCount" : 2, "modifiedCount" : 2 }
+> db.students.find().pretty()
+{
+	"_id" : ObjectId("58e67f8933d07e54cb23e766"),
+	"name" : "Sandra",
+	"home_state" : "Alaska",
+	"lucky_number" : 7,
+	"birthday" : {
+		"month" : 6,
+		"day" : 6,
+		"year" : 1990
+	},
+	"interests" : [
+		"coding",
+		"brunch",
+		"MongoDB"
+	],
+	"number_of_belts" : 0
+}
+{
+	"_id" : ObjectId("58e6805533d07e54cb23e768"),
+	"name" : "Pat",
+	"home_state" : "Nebraska",
+	"lucky_number" : 21,
+	"birthday" : {
+		"month" : 2,
+		"day" : 30,
+		"year" : 1900
+	},
+	"personality" : "a-hole",
+	"interests" : [
+		"coding",
+		"brunch",
+		"MongoDB"
+	],
+	"number_of_belts" : 0
+}
+> db.students.updateMany({},{$inc: {number_of_belts:1}})
+{ "acknowledged" : true, "matchedCount" : 2, "modifiedCount" : 2 }
+> db.students.find().pretty()
+{
+	"_id" : ObjectId("58e67f8933d07e54cb23e766"),
+	"name" : "Sandra",
+	"home_state" : "Alaska",
+	"lucky_number" : 7,
+	"birthday" : {
+		"month" : 6,
+		"day" : 6,
+		"year" : 1990
+	},
+	"interests" : [
+		"coding",
+		"brunch",
+		"MongoDB"
+	],
+	"number_of_belts" : 1
+}
+{
+	"_id" : ObjectId("58e6805533d07e54cb23e768"),
+	"name" : "Pat",
+	"home_state" : "Nebraska",
+	"lucky_number" : 21,
+	"birthday" : {
+		"month" : 2,
+		"day" : 30,
+		"year" : 1900
+	},
+	"personality" : "a-hole",
+	"interests" : [
+		"coding",
+		"brunch",
+		"MongoDB"
+	],
+	"number_of_belts" : 1
+}
+> db.students.updateMany({},{$rename:{number_of_belts:belts_earned}})
+2017-04-06T13:58:36.906-0500 E QUERY    [thread1] ReferenceError: belts_earned is not defined :
+@(shell):1:37
+> db.students.updateMany({},{ $rename: { 'number_of_belts': 'belts_earned'}})
+{ "acknowledged" : true, "matchedCount" : 2, "modifiedCount" : 2 }
+> db.students.find().pretty()
+{
+	"_id" : ObjectId("58e67f8933d07e54cb23e766"),
+	"name" : "Sandra",
+	"home_state" : "Alaska",
+	"lucky_number" : 7,
+	"birthday" : {
+		"month" : 6,
+		"day" : 6,
+		"year" : 1990
+	},
+	"interests" : [
+		"coding",
+		"brunch",
+		"MongoDB"
+	],
+	"belts_earned" : 1
+}
+{
+	"_id" : ObjectId("58e6805533d07e54cb23e768"),
+	"name" : "Pat",
+	"home_state" : "Nebraska",
+	"lucky_number" : 21,
+	"birthday" : {
+		"month" : 2,
+		"day" : 30,
+		"year" : 1900
+	},
+	"personality" : "a-hole",
+	"interests" : [
+		"coding",
+		"brunch",
+		"MongoDB"
+	],
+	"belts_earned" : 1
+}
+> db.students.update({}, { $unset: { 'lucky_number': ""}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.students.find().pretty()
+{
+	"_id" : ObjectId("58e67f8933d07e54cb23e766"),
+	"name" : "Sandra",
+	"home_state" : "Alaska",
+	"birthday" : {
+		"month" : 6,
+		"day" : 6,
+		"year" : 1990
+	},
+	"interests" : [
+		"coding",
+		"brunch",
+		"MongoDB"
+	],
+	"belts_earned" : 1
+}
+{
+	"_id" : ObjectId("58e6805533d07e54cb23e768"),
+	"name" : "Pat",
+	"home_state" : "Nebraska",
+	"lucky_number" : 21,
+	"birthday" : {
+		"month" : 2,
+		"day" : 30,
+		"year" : 1900
+	},
+	"personality" : "a-hole",
+	"interests" : [
+		"coding",
+		"brunch",
+		"MongoDB"
+	],
+	"belts_earned" : 1
+}
+> db.students.updateMany({}, { $unset: { 'lucky_number': ""}})
+{ "acknowledged" : true, "matchedCount" : 2, "modifiedCount" : 1 }
+> db.students.find().pretty()
+{
+	"_id" : ObjectId("58e67f8933d07e54cb23e766"),
+	"name" : "Sandra",
+	"home_state" : "Alaska",
+	"birthday" : {
+		"month" : 6,
+		"day" : 6,
+		"year" : 1990
+	},
+	"interests" : [
+		"coding",
+		"brunch",
+		"MongoDB"
+	],
+	"belts_earned" : 1
+}
+{
+	"_id" : ObjectId("58e6805533d07e54cb23e768"),
+	"name" : "Pat",
+	"home_state" : "Nebraska",
+	"birthday" : {
+		"month" : 2,
+		"day" : 30,
+		"year" : 1900
+	},
+	"personality" : "a-hole",
+	"interests" : [
+		"coding",
+		"brunch",
+		"MongoDB"
+	],
+	"belts_earned" : 1
+}
+> db.students.updateMany({},{$set:{'updated_on':{$type:"timestamp"}}})
+2017-04-06T14:09:43.353-0500 E QUERY    [thread1] WriteError: The dollar ($) prefixed field '$type' in 'updated_on.$type' is not valid for storage. :
+WriteError({
+	"index" : 0,
+	"code" : 52,
+	"errmsg" : "The dollar ($) prefixed field '$type' in 'updated_on.$type' is not valid for storage.",
+	"op" : {
+		"q" : {
+			
+		},
+		"u" : {
+			"$set" : {
+				"updated_on" : {
+					"$type" : "timestamp"
+				}
+			}
+		},
+		"multi" : true,
+		"upsert" : false
+	}
+})
+WriteError@src/mongo/shell/bulk_api.js:469:48
+Bulk/mergeBatchResults@src/mongo/shell/bulk_api.js:836:49
+Bulk/executeBatch@src/mongo/shell/bulk_api.js:906:13
+Bulk/this.execute@src/mongo/shell/bulk_api.js:1150:21
+DBCollection.prototype.updateMany@src/mongo/shell/crud_api.js:627:17
+@(shell):1:1
+> db.students.updateMany({},{$set:{'updated_on':{$type:"date"}}})
+2017-04-06T14:12:48.946-0500 E QUERY    [thread1] WriteError: The dollar ($) prefixed field '$type' in 'updated_on.$type' is not valid for storage. :
+WriteError({
+	"index" : 0,
+	"code" : 52,
+	"errmsg" : "The dollar ($) prefixed field '$type' in 'updated_on.$type' is not valid for storage.",
+	"op" : {
+		"q" : {
+			
+		},
+		"u" : {
+			"$set" : {
+				"updated_on" : {
+					"$type" : "date"
+				}
+			}
+		},
+		"multi" : true,
+		"upsert" : false
+	}
+})
+WriteError@src/mongo/shell/bulk_api.js:469:48
+Bulk/mergeBatchResults@src/mongo/shell/bulk_api.js:836:49
+Bulk/executeBatch@src/mongo/shell/bulk_api.js:906:13
+Bulk/this.execute@src/mongo/shell/bulk_api.js:1150:21
+DBCollection.prototype.updateMany@src/mongo/shell/crud_api.js:627:17
+@(shell):1:1
+> db.students.updateMany({},{$set:{'updated_on':''}})
+{ "acknowledged" : true, "matchedCount" : 2, "modifiedCount" : 2 }
+> db.students.find().pretty()
+{
+	"_id" : ObjectId("58e67f8933d07e54cb23e766"),
+	"name" : "Sandra",
+	"home_state" : "Alaska",
+	"birthday" : {
+		"month" : 6,
+		"day" : 6,
+		"year" : 1990
+	},
+	"interests" : [
+		"coding",
+		"brunch",
+		"MongoDB"
+	],
+	"belts_earned" : 1,
+	"updated_on" : ""
+}
+{
+	"_id" : ObjectId("58e6805533d07e54cb23e768"),
+	"name" : "Pat",
+	"home_state" : "Nebraska",
+	"birthday" : {
+		"month" : 2,
+		"day" : 30,
+		"year" : 1900
+	},
+	"personality" : "a-hole",
+	"interests" : [
+		"coding",
+		"brunch",
+		"MongoDB"
+	],
+	"belts_earned" : 1,
+	"updated_on" : ""
+}
+> db.students.updateMany({},{$set:{'updated_on':{$type:"timestamp"}}})
+2017-04-06T14:14:22.673-0500 E QUERY    [thread1] WriteError: The dollar ($) prefixed field '$type' in 'updated_on.$type' is not valid for storage. :
+WriteError({
+	"index" : 0,
+	"code" : 52,
+	"errmsg" : "The dollar ($) prefixed field '$type' in 'updated_on.$type' is not valid for storage.",
+	"op" : {
+		"q" : {
+			
+		},
+		"u" : {
+			"$set" : {
+				"updated_on" : {
+					"$type" : "timestamp"
+				}
+			}
+		},
+		"multi" : true,
+		"upsert" : false
+	}
+})
+WriteError@src/mongo/shell/bulk_api.js:469:48
+Bulk/mergeBatchResults@src/mongo/shell/bulk_api.js:836:49
+Bulk/executeBatch@src/mongo/shell/bulk_api.js:906:13
+Bulk/this.execute@src/mongo/shell/bulk_api.js:1150:21
+DBCollection.prototype.updateMany@src/mongo/shell/crud_api.js:627:17
+@(shell):1:1
+> db.students.updateMany({},{$set:{'updated_on':new Date()}})
+{ "acknowledged" : true, "matchedCount" : 2, "modifiedCount" : 2 }
+> db.students.find().pretty()
+{
+	"_id" : ObjectId("58e67f8933d07e54cb23e766"),
+	"name" : "Sandra",
+	"home_state" : "Alaska",
+	"birthday" : {
+		"month" : 6,
+		"day" : 6,
+		"year" : 1990
+	},
+	"interests" : [
+		"coding",
+		"brunch",
+		"MongoDB"
+	],
+	"belts_earned" : 1,
+	"updated_on" : ISODate("2017-04-06T19:27:17.471Z")
+}
+{
+	"_id" : ObjectId("58e6805533d07e54cb23e768"),
+	"name" : "Pat",
+	"home_state" : "Nebraska",
+	"birthday" : {
+		"month" : 2,
+		"day" : 30,
+		"year" : 1900
+	},
+	"personality" : "a-hole",
+	"interests" : [
+		"coding",
+		"brunch",
+		"MongoDB"
+	],
+	"belts_earned" : 1,
+	"updated_on" : ISODate("2017-04-06T19:27:17.471Z")
+}
+> 

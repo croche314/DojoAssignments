@@ -2,15 +2,11 @@ from django.conf.urls import url
 from views import *
 
 urlpatterns = [
-	url(r'^$', start),
-	url(r'^register$',register),
-	url(r'^login$',login),
-	url(r'^logout$',logout),
-	url(r'^books$',index),
-	url(r'books/add$',new_book),
-	url(r'^books/create$',create_book),
-	url(r'^books/(?P<book_id>\d+)$',show_book),
-	url(r'books/add_review/(?P<book_id>\d+)$',add_review),
-	url(r'reviews/(?P<review_id>\d+)/delete$',destroy_review),
-	url(r'users/(?P<user_id>\d+)$',show_user)
+	url(r'^',index, name=''),
+	url(r'add$',new_book, name='add'),
+	url(r'create$',create_book, name='create'),
+	url(r'(?P<book_id>\d+)$',show_book, name='show_book'),
+	url(r'add_review/(?P<book_id>\d+)$',add_review, name='add_review'),
+	url(r'reviews/(?P<review_id>\d+)/delete$',destroy_review, name='delete'),
+	url(r'users/(?P<user_id>\d+)$',show_user, name='show_user')
 ]

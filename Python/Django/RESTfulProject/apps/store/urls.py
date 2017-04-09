@@ -1,5 +1,6 @@
 from django.conf.urls import url
 from views import *
+from django.views.generic import TemplateView
 
 urlpatterns = [
 	url(r'^$', index),
@@ -8,6 +9,6 @@ urlpatterns = [
 	url(r'^show/(?P<id>\d+)$',show),
 	url(r'^edit/(?P<id>\d+)$',edit),
 	url(r'^update/(?P<id>\d+)$',update),
-	url(r'^destroy/(?P<id>\d+)$',destroy)
-
+	url(r'^destroy/(?P<id>\d+)$',destroy),
+	url(r'^upload_pic$',upload_pic)
 ]

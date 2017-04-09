@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login / Register</title>
+</head>
+<body>
+{% if messages %}
+	{% for message in messages %}
+		<p>{{message}}</p>
+	{% endfor %}
+{% endif %}
+	<!-- Register form -->
+	<form id="register_form" action="{% url 'login:create_user' %}" method="post">
+		{% csrf_token %}
+		<fieldset>
+			<legend>Register</legend>
+			<table>
+				<tr>
+					<td>First name:</td><td><input type="text" name="txt_first_name" value="John">*</td>
+				</tr>
+				<tr>
+					<td>Last name:</td><td><input type="text" name="txt_last_name" value="Johnson">*</td>
+				</tr>
+				<tr>
+					<td>Cuisine:</td><td><input type="text" name="txt_cuisine" value="Mexican">*</td>
+				</tr>
+				<tr>
+					<td>Password:</td><td><input type="text" name="txt_password" value="abc123">*</td>
+				</tr>
+				<tr>
+					<td>Confirm password:</td><td><input type="text" name="txt_confirm_password" value="abc123">*</td>
+				</tr>
+			</table>
+			<input class="button" type="submit" value="Register">
+		</fieldset>
+	</form>
+
+	<!-- Login form -->
+	<form id="login_form" action="{% url 'login:login_user' %}" method="post">
+		{% csrf_token %}
+		<fieldset>
+			<legend>Log In</legend>
+			<table>
+				<tr>
+					<td>First name:</td><td><input type="text" name="txt_first_name">*</td>
+				</tr>
+				<tr>
+					<td>Password:</td><td><input type="password" name="txt_password">*</td>
+				</tr>
+			</table>
+			<input class="button" type="submit" value="Log In">
+		</fieldset>
+	</form>
+</body>
+</html>
+

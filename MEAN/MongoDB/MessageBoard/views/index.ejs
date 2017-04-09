@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Message Board</title>
+	<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet"> 
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<h1>Dojo Message Board</h1>
+	<hr>
+
+	<!--  NEW MESSAGE -->
+	<form class="new_message" action="message/create" method="post">
+		<h4>Name:</h4>
+		<input type="text" name="name">
+		<h4>Message:</h4>
+		<textarea name="new_message"></textarea>
+		<input class="btn btn-default" type="submit" value="Post Message">
+	</form>
+
+	<!-- DISPLAY ALL MESSAGES -->
+	<% for (var i=0;i<all_messages.length;i++) { %>
+	<div class="one_message">
+		<h2>Name: <%= all_messages[i].name %></h2>
+		<h2>Message: <%= all_messages[i].message %></h2>
+		<br><br>
+		
+		<!-- DISPLAY ALL COMMENTS (FOR THIS MESSAGE) -->
+		<div class="comments">
+			<h4>Name: Jimmy</h4>
+			<h4>Comment: I agree, the Coding Dojo is pretty swell.</h4>
+		</div>
+			
+		<div class="comments">
+			<h4>Name: Jay</h4>
+			<h4>Comment: Why aren't you guys working??</h4>
+		</div>
+			<br><br>
+			<!-- NEW COMMENT -->
+		<div class="comments">
+			<form action="/comment/create" method="post">
+				<h4>Name:</h4>
+				<input type="text" name="name">
+				<h4>Comment:</h4>
+				<textarea name="new_comment"></textarea>
+				<input type="submit" value="Post Comment">
+			</form>
+		</div>
+		<a href="delete/<%= all_messages[i]._id %>">Delete Message</a>
+	</div>
+	<% } %>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Home</title>
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet"> 
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<h1 class="center">Welcome to Quoting Dojo</h1>
+	<form action="/quotes" method="post">
+		<table>
+			<tr>
+				<td>Your name:</td><td><input type="text" name="name"></td>
+			</tr>
+			<tr>
+				<td>Your quote:</td><td><textarea name="quote"></textarea></td>
+			</tr>
+		</table>
+		<br>
+		<input class="button" type="submit" value="Submit">
+		<a class="button" href="/quotes">Skip to Quotes</a>
+	</form>
+</body>
+</html>

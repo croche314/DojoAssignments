@@ -24,4 +24,12 @@
 		<br>
 		<a class="button" href="/new">Add a new product</a>
 	</div> <!-- #container -->
+
+	<form action="/upload_pic" method="post" enctype="multipart/form-data">{% csrf_token %}
+    <p>
+        <input id="id_image" type="file" class="" name="image">
+    </p>
+    <input type="submit" value="Submit" />
+</form>
+
 {% include 'store/footer.html' %}

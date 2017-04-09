@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Llama Dashboard</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css"> 
+</head>
+<body>
+	<div id="llama_details">
+		<img src="<%= llama.img_url %>" alt="<%= llama.name %>">
+		<h1><%= llama.name %></h1>
+		<table class="table table-striped">
+			<tr>
+				<td>Country:</td><td> <%= llama.country %></td>
+			</tr>
+			<tr>
+				<td>Age:</td><td> <%= llama.age %></td>
+			</tr>
+		</table>
+	</div>
+	<nav>
+		<a class="button" href="/">Home</a>
+		<a class="button" href="/new">New Llama</a>
+		<a class="button" href="/edit/<%= llama._id %>">Edit Llama</a>
+		<a class="button" href="/destroy/<%= llama.id %>">Delete Llama</a>
+	</nav>
+</body>
+</html>

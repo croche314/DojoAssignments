@@ -4,7 +4,6 @@ from .models import User, Book, Review
 import bcrypt, re
 from django.core.urlresolvers import reverse
 
-
 # Create your views here.
 def start(request):
 	return render(request, 'book_reviews/login.html')

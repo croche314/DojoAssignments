@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Llama Dashboard</title>
+	<!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/bootstrap.min.js"></script> -->
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/css/style.css"> 
+</head>
+<body>
+	<h1>All the Llamas</h1>
+	<nav>
+		<a class="button" href="/">Home</a>
+		<a class="button" href="/new">New Llama</a>
+	</nav>
+	<div id="all_llamas">
+		<table class="table table-striped">
+			<% for(var i=0;i<llamas.length;i++) { %>
+				<tr>
+					<td>
+						<a href="llama/<%= llamas[i]._id %>"><%= llamas[i].name %></a>
+					</td>
+					<td><%= llamas[i].country %></td>
+					<td><%= llamas[i].age %></td>
+					<td><img src="<%= llamas[i].img_url %>" alt="llama"></td>
+					<td><a class="button" href=/edit/<%= llamas[i]._id %>>Edit</a></td>
+					<td><a class="button" href="/destroy/<%= llamas[i]._id %>">Delete</a></td>
+				</tr>
+			<% } %>
+		</table>
+	</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Llama Dashboard</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css"> 
+</head>
+<body>
+	<div class="container-fluid">
+	<h1>New Llama</h1>
+	<nav>
+		<a class="btn btn-primary button" href="/">Home</a>
+		<a class="button" href="/new">New Llama</a>
+	</nav>
+	<br>
+	<form action="/create" method="post">
+		<table class="table table-striped">
+			<tr>
+				<td>Name:</td><td><input type="text" name="name"></td>
+			</tr>
+			<tr>
+				<td>Country:</td><td><input type="text" name="country"></td>
+			</tr>
+			<tr>
+				<td>Age:</td><td><input type="text" name="age"></td>
+			</tr>
+			<tr>
+				<td>Image:</td><td><input type="text" name="img_url"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td colspan="2">	
+					<input class="button" type="submit" value="Create Llama">
+				</td>
+			</tr>
+		</table>
+	</form>
+	</div>
+</body>
+</html>
