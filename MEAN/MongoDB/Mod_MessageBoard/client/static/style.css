@@ -1,0 +1,52 @@
+body {
+	font-family: 'Gloria Hallelujah';
+	font-size: 16px;
+	margin: 50px;
+	background-color: #218380;
+	color: white;
+	text-shadow: 2px 2px black;
+}
+
+h1 {
+	
+	padding: 10px;
+	border-radius: 5px;
+	box-shadow: 5px 5px 5px black;
+	text-shadow: 2px 2px black;
+	border: 6px solid #ffc43d;
+}
+
+h4 {
+	margin: 5px;
+}
+
+.one_message {
+	margin: 20px 0;
+	padding: 25px;
+	border-radius: 5px;
+	border: 4px solid #ffc43d;
+	box-shadow: 3px 3px 5px black;
+}
+
+.one_message h2 {
+		
+}
+
+.comments {
+	margin-left: 100px;
+	padding: 25px;
+	border-radius: 5px;
+	border: 4px solid #ffc43d;
+	box-shadow: 3px 3px 5px black;
+}
+
+.comments h4 {
+	margin: 0;
+
+}
+
+input, textarea {
+	font-size: 20px;
+	padding: 5px;
+	font-family: 'Gloria Hallelujah';
+}
